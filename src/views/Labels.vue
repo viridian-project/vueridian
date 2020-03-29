@@ -1,6 +1,6 @@
 <template>
   <div id="page">
-    <HeaderHome />
+    <HeaderNonProducts />
     <div id="main-content">
       <div class="home">
         <img alt="Vue logo" src="../assets/logo.png" />
@@ -13,14 +13,14 @@
 
 <script>
 // @ is an alias to /src
-import HeaderHome from "@/components/headers/HeaderHome.vue";
+import HeaderNonProducts from "@/components/headers/HeaderNonProducts.vue";
 import HelloWorld from "@/components/HelloWorld.vue";
 import Footer from "@/components/Footer.vue";
 
 export default {
   name: "Home",
   components: {
-    HeaderHome,
+    HeaderNonProducts,
     HelloWorld,
     Footer
   }

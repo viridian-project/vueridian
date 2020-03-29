@@ -12,7 +12,7 @@
   font-family: 'Comfortaa';
   font-style: normal;
   font-weight: 400;
-  src: local('Comfortaa Regular'), local('Comfortaa-Regular'), url('../fonts/Comfortaa/static/Comfortaa-Regular.ttf') format('truetype');
+  src: local('Comfortaa Regular'), local('Comfortaa-Regular'), url('../fonts/Comfortaa/Comfortaa-Regular.ttf') format('truetype');
 }
 
 
@@ -220,6 +220,10 @@ header ul a>span {
   display: flex;
 }
 
+.full-width {
+  width: 100%;
+}
+
 .two-full-widths {
   width: 200%;
 }
@@ -260,6 +264,10 @@ header ul a>span {
 #normal-header>a {
   display: flex;
   align-items: center;
+}
+
+#normal-header>a.router-link-exact-active {
+  border-bottom: 0;
 }
 
 nav>ul>li>a,
@@ -330,13 +338,13 @@ nav>ul>li>a:hover,
   align-items: center;
 }
 
-#header-tabs>li>a:hover,
-#header-tabs>li>a:focus {
+#header-tabs>li>a:hover {
   /* background-color: #6bf; */
-  background-color: #7cc5ff;
+  /* background-color: #7cc5ff; */
+  background-color: #bfbfbf;
 }
 
-.active-tab {
+.router-link-exact-active {
   /* border-bottom: 4px solid #6bf; */
   border-bottom: 4px solid #7cc5ff;
   /* border-radius: 20px; */
@@ -396,13 +404,14 @@ nav>ul>li>a:hover,
 
 html,
 body,
-#app {
+#app,
+#page {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-#app {
+#page {
   /* background-color: beige; */
   /* background-color: #f5eadc; */
   background-color: #eee;
