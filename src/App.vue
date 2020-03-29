@@ -1,32 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <Header />
+    <div id="main-content">
+      <router-view />
     </div>
-    <router-view />
+    <footer>
+      <p>Copyright 2019 The Viridian Project</p>
+    </footer>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style src="@/assets/css/main.css"></style>
 
-#nav {
-  padding: 30px;
-}
+<script>
+import Header from "@/components/Header.vue";
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+export default {
+  components: {
+    Header
+  }
+};
+</script>
