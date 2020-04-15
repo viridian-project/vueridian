@@ -95,6 +95,10 @@ a:hover {
   color: #0055ff;
 }
 
+header {
+  z-index: 1000;
+}
+
 header a:hover {
   color: inherit;
 }
@@ -299,6 +303,10 @@ nav>ul>li>a:hover,
 #search-textinput-header>div>input {
   width: 90%;
   padding: 7px;
+}
+
+#search-textinput-header>a.router-link-exact-active {
+  border-bottom: 0;
 }
 
 

@@ -70,10 +70,33 @@
       >
         <img src="@/assets/icons/ionicons/md-arrow-back.svg" alt="Back" />
       </a>
-      <div><input type="text" name="product-name" id="product-name" /></div>
-      <a title="Submit" href="products-search-results.html">
+      <div>
+        <input
+          type="text"
+          name="product-name"
+          id="product-name"
+          v-model="q"
+          disabled="disabled"
+        />
+      </div>
+      <router-link v-bind:to="'/products/search?q=' + encodeURIComponent(q)">
         <img src="@/assets/icons/ionicons/md-send.svg" alt="Submit" />
-      </a>
+      </router-link>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data: function() {
+    return {
+      q: "chocolate spread"
+    };
+  }
+  // methods: {
+  //   onSubmit: function() {
+  //     this.$router.replace({ query: { q: this.q } });
+  //   }
+  // }
+};
+</script>
