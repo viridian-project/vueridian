@@ -43,48 +43,12 @@
                 v-bind:text="prod.score"
               />
             </div>
-            <div class="card-score-bar card-score-bar-regular">
-              <div class="score-bar">
-                <div
-                  class="score-bar-tick score-bar-tick-minusseventyfive"
-                ></div>
-                <div class="score-bar-tick score-bar-tick-minusfifty"></div>
-                <div
-                  class="score-bar-tick score-bar-tick-minustwentyfive"
-                ></div>
-                <div class="score-bar-tick score-bar-tick-zero"></div>
-                <div class="score-bar-tick score-bar-tick-twentyfive"></div>
-                <div class="score-bar-tick score-bar-tick-fifty"></div>
-                <div class="score-bar-tick score-bar-tick-seventyfive"></div>
-                <div class="score-blob-gray" v-bind:style="prod.position"></div>
-              </div>
-              <div class="score-bar-label-row">
-                <span class="score-bar-label score-bar-label-min">-100</span>
-                <span class="score-bar-label score-bar-label-zero">0</span>
-                <span class="score-bar-label score-bar-label-max">100</span>
-              </div>
-            </div>
+            <ScoreBar class="card-score-bar card-score-bar-regular" :position="prod.position" :has-labels="true" />
           </div>
           <div class="card-price" v-bind:title="prod.priceCurr">
             {{ prod.priceCurr }}
           </div>
-          <div class="card-score-bar card-score-bar-tiny-screens">
-            <div class="score-bar">
-              <div class="score-bar-tick score-bar-tick-minusseventyfive"></div>
-              <div class="score-bar-tick score-bar-tick-minusfifty"></div>
-              <div class="score-bar-tick score-bar-tick-minustwentyfive"></div>
-              <div class="score-bar-tick score-bar-tick-zero"></div>
-              <div class="score-bar-tick score-bar-tick-twentyfive"></div>
-              <div class="score-bar-tick score-bar-tick-fifty"></div>
-              <div class="score-bar-tick score-bar-tick-seventyfive"></div>
-              <div class="score-blob-gray" v-bind:style="prod.position"></div>
-            </div>
-            <div class="score-bar-label-row">
-              <span class="score-bar-label score-bar-label-min">-100</span>
-              <span class="score-bar-label score-bar-label-zero">0</span>
-              <span class="score-bar-label score-bar-label-max">100</span>
-            </div>
-          </div>
+          <ScoreBar class="card-score-bar card-score-bar-tiny-screens" :position="prod.position" :has-labels="true" />
           <!-- Hovercard with details on the product score: -->
           <div
             v-bind:id="'hovercard-' + prod.id"
@@ -155,21 +119,24 @@
 </template>
 
 <style src="@/assets/css/cards.css"></style>
-<style src="@/assets/css/score-bar.css"></style>
 <style src="@/assets/css/hovercard.css"></style>
+
+<style scoped>
+h2 {
+  padding: 0 10px;
+}
+</style>
 
 <script>
 // @ is an alias to /src
 import HeaderProducts from "@/components/headers/HeaderProducts.vue";
 import Footer from "@/components/Footer.vue";
 import ScoreBlob from "@/components/widgets/ScoreBlob.vue";
+import ScoreBar from "@/components/widgets/ScoreBar.vue"
 
 import productSearchResults from "@/assets/data/products.js";
 import preferences from "@/assets/data/preferences.js";
 import scolor from "@/assets/js/score-color.js";
-
-console.log(productSearchResults);
-console.log(preferences);
 
 /* Build the products object based on preferences */
 let products = [];
@@ -251,7 +218,8 @@ export default {
   components: {
     HeaderProducts,
     Footer,
-    ScoreBlob
+    ScoreBlob,
+    ScoreBar
   },
   data: function() {
     return {
