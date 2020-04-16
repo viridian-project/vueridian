@@ -4,10 +4,12 @@
     <div id="main-content">
       <div class="home">
         <img
-          alt="Vue logo"
+          alt="Viridian logo"
           src="@/assets/images/StellaOctangula_finished.svg"
         />
-        <h1>Products Information and Rating</h1>
+        <h1>
+          Products Information and Rating
+        </h1>
         <h3>
           Use the search button in the upper right to search for products.
         </h3>
@@ -30,12 +32,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.home {
-  margin-top: 40px;
-}
-.home > img {
-  width: 80%;
-}
-</style>

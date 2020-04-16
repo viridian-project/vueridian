@@ -59,7 +59,6 @@
 </template>
 
 <style src="@/assets/css/cards.css"></style>
-<style src="@/assets/css/hovercard.css"></style>
 
 <style scoped>
 h2 {

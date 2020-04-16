@@ -3,7 +3,10 @@
     <HeaderNonProducts />
     <div id="main-content">
       <div class="home">
-        <img alt="Vue logo" src="../assets/logo.png" />
+        <img
+          alt="Viridian logo"
+          src="@/assets/images/StellaOctangula_finished.svg"
+        />
         <HelloWorld msg="Welcome to Your Vue.js App" />
       </div>
     </div>

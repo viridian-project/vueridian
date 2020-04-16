@@ -459,6 +459,15 @@ body,
   }
 }
 
+.home {
+  margin-top: 40px;
+  padding: 0 10px;
+}
+
+.home>img {
+  width: 80%;
+}
+
 
 /**********
 * Footer *
