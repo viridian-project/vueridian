@@ -50,67 +50,7 @@
           </div>
           <ScoreBar class="card-score-bar card-score-bar-tiny-screens" :position="prod.position" :has-labels="true" />
           <!-- Hovercard with details on the product score: -->
-          <div
-            v-bind:id="'hovercard-' + prod.id"
-            class="hovercard"
-            style="display: none;"
-            data-permanent="false"
-          >
-            <div class="hovercard-row">
-              <div>Environment:</div>
-              <ScoreBlob
-                class="score-blob-small"
-                v-bind:color="prod.detailedColors.environment"
-                v-bind:score="prod.detailedScore.environment"
-                v-bind:text="prod.detailedScore.environment"
-              />
-            </div>
-            <div class="hovercard-row">
-              <div>Climate:</div>
-              <ScoreBlob
-                class="score-blob-small"
-                v-bind:color="prod.detailedColors.climate"
-                v-bind:score="prod.detailedScore.climate"
-                v-bind:text="prod.detailedScore.climate"
-              />
-            </div>
-            <div class="hovercard-row">
-              <div>Society:</div>
-              <ScoreBlob
-                class="score-blob-small"
-                v-bind:color="prod.detailedColors.society"
-                v-bind:score="prod.detailedScore.society"
-                v-bind:text="prod.detailedScore.society"
-              />
-            </div>
-            <div class="hovercard-row">
-              <div>Health:</div>
-              <ScoreBlob
-                class="score-blob-small"
-                v-bind:color="prod.detailedColors.health"
-                v-bind:score="prod.detailedScore.health"
-                v-bind:text="prod.detailedScore.health"
-              />
-            </div>
-            <div class="hovercard-row">
-              <div>Animal welfare:</div>
-              <ScoreBlob
-                class="score-blob-small"
-                v-bind:color="prod.detailedColors.animalWelfare"
-                v-bind:score="prod.detailedScore.animalWelfare"
-                v-bind:text="prod.detailedScore.animalWelfare"
-              />
-            </div>
-            <div class="hovercard-row">
-              <div>Economy:</div>
-              <ScoreBlob
-                class="score-blob-small"
-                v-bind:color="prod.detailedColors.economy"
-                v-bind:score="prod.detailedScore.economy"
-                v-bind:text="prod.detailedScore.economy"
-              />
-            </div>
-          </div>
+          <Hovercard :prod="prod" />
         </article>
       </section>
     </div>
@@ -132,7 +72,8 @@ h2 {
 import HeaderProducts from "@/components/headers/HeaderProducts.vue";
 import Footer from "@/components/Footer.vue";
 import ScoreBlob from "@/components/widgets/ScoreBlob.vue";
-import ScoreBar from "@/components/widgets/ScoreBar.vue"
+import ScoreBar from "@/components/widgets/ScoreBar.vue";
+import Hovercard from "@/components/widgets/Hovercard.vue";
 
 import productSearchResults from "@/assets/data/products.js";
 import preferences from "@/assets/data/preferences.js";
@@ -219,7 +160,8 @@ export default {
     HeaderProducts,
     Footer,
     ScoreBlob,
-    ScoreBar
+    ScoreBar,
+    Hovercard
   },
   data: function() {
     return {
