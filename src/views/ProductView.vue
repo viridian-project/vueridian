@@ -37,6 +37,15 @@ export default {
     return {
       id: this.$route.params.id
     }
+  },
+  computed: {
+    product: function() {
+      let index = -1;
+      for (let i = 0; index < 0 && i < productSearchResults.length; i++) {
+        if (productSearchResults[i].id === this.id) index = i;
+      }
+      return productSearchResults[index];
+    }
   }
 };
 </script>
