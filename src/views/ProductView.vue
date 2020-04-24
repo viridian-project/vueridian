@@ -45,6 +45,17 @@ export default {
         if (productSearchResults[i].id === this.id) index = i;
       }
       return productSearchResults[index];
+    },
+    prefLocale: function() {
+      /* Fetch the preferred locale */
+      let prefLocale = {};
+      for (let language of preferences.preferredLanguages) {
+        if (language in this.product.locales) {
+          prefLocale = this.product.locales[language];
+          break;
+        }
+      }
+      return prefLocale;
     }
   }
 };
