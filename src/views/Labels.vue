@@ -21,7 +21,7 @@ import HelloWorld from "@/components/HelloWorld.vue";
 import Footer from "@/components/Footer.vue";
 
 export default {
-  name: "Home",
+  name: "Labels",
   components: {
     HeaderNonProducts,
     HelloWorld,

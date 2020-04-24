@@ -2,7 +2,7 @@
   <div id="page">
     <HeaderProducts />
     <div id="main-content">
-      <h2>
+      <h2 class="results-heading">
         Search results for: <code>{{ this.$route.query.q }}</code>
       </h2>
       <section id="cards">
@@ -43,12 +43,20 @@
                 v-bind:text="prod.score"
               />
             </div>
-            <ScoreBar class="card-score-bar card-score-bar-regular" :position="prod.position" :has-labels="true" />
+            <ScoreBar
+              class="card-score-bar card-score-bar-regular"
+              :position="prod.position"
+              :has-labels="true"
+            />
           </div>
           <div class="card-price" v-bind:title="prod.priceCurr">
             {{ prod.priceCurr }}
           </div>
-          <ScoreBar class="card-score-bar card-score-bar-tiny-screens" :position="prod.position" :has-labels="true" />
+          <ScoreBar
+            class="card-score-bar card-score-bar-tiny-screens"
+            :position="prod.position"
+            :has-labels="true"
+          />
           <!-- Hovercard with details on the product score: -->
           <Hovercard :prod="prod" />
         </article>
@@ -61,7 +69,7 @@
 <style src="@/assets/css/cards.css"></style>
 
 <style scoped>
-h2 {
+h2.results-heading {
   padding: 0 10px;
 }
 </style>
@@ -74,8 +82,8 @@ import ScoreBlob from "@/components/widgets/ScoreBlob.vue";
 import ScoreBar from "@/components/widgets/ScoreBar.vue";
 import Hovercard from "@/components/widgets/Hovercard.vue";
 
-import productSearchResults from "@/assets/data/products.js";
 import preferences from "@/assets/data/preferences.js";
+import productSearchResults from "@/assets/data/products.js";
 import scolor from "@/assets/js/score-color.js";
 
 /* Build the products object based on preferences */
@@ -135,7 +143,7 @@ for (let product of productSearchResults) {
     detailedScore: product.score,
     detailedColors: detailedColors,
     detailedPositions: detailedPositions,
-    url: "product.html#" + product.id
+    url: "view?id=" + product.id
   });
 }
 let maxPriceLength = 0;
@@ -154,7 +162,7 @@ if (maxPriceLength > 9) {
 console.log(products);
 
 export default {
-  name: "Home",
+  name: "ProductsSearch",
   components: {
     HeaderProducts,
     Footer,

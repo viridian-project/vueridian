@@ -77,6 +77,19 @@
   left: 87.5%;
 }
 
+.score-blob-gray {
+  width: 24px;
+  height: 24px;
+  border: 1px solid gray;
+  border-radius: 12px;
+  background-color: gray;
+  margin-left: -12px;
+  /* parent (=score-bar) position relative means absolute position of child (=score-blob-gray) will be relative to parent */
+  position: absolute;
+  top: -5px;
+  /* left: 50%; */
+}
+
 .score-bar-label-row {
   /* parent (=score-bar-label-row) position relative means absolute position of child (=score-bar-label) will be relative to parent */
   position: relative;
@@ -115,12 +128,18 @@
   .score-bar {
     height: 12px;
   }
+  .score-blob-gray {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin-left: -10px;
+  }
 }
 </style>
 
 <script>
 export default {
-  name: 'ScoreBlob',
-  props: ['position', 'has-labels']
-}
+  name: "ScoreBar",
+  props: ["position", "has-labels"]
+};
 </script>

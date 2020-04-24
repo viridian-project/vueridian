@@ -315,6 +315,11 @@ nav>ul>li>a:hover,
 #normal-header>a>img {
   height: 36px;
   margin-right: 10px;
+  border-bottom: none;
+}
+
+#normal-header>a.router-link-active {
+  border-bottom: none;
 }
 
 
@@ -352,7 +357,7 @@ nav>ul>li>a:hover,
   background-color: #bfbfbf;
 }
 
-.router-link-exact-active {
+.router-link-active {
   /* border-bottom: 4px solid #6bf; */
   border-bottom: 4px solid #7cc5ff;
   /* border-radius: 20px; */

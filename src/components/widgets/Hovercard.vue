@@ -1,5 +1,10 @@
 <template>
-  <div v-bind:id="'hovercard-' + prod.id" class="hovercard" style="display: none;" data-permanent="false">
+  <div
+    v-bind:id="'hovercard-' + prod.id"
+    class="hovercard"
+    style="display: none;"
+    data-permanent="false"
+  >
     <div class="hovercard-row">
       <div>Environment:</div>
       <ScoreBlob
@@ -149,10 +154,10 @@
 <script>
 import ScoreBlob from "@/components/widgets/ScoreBlob.vue";
 export default {
-  name: 'Hovercard',
-  props: ['prod'],
+  name: "Hovercard",
+  props: ["prod"],
   components: {
     ScoreBlob
   }
-}
+};
 </script>

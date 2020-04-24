@@ -25,7 +25,7 @@ import HeaderProducts from "@/components/headers/HeaderProducts.vue";
 import Footer from "@/components/Footer.vue";
 
 export default {
-  name: "Home",
+  name: "Products",
   components: {
     HeaderProducts,
     Footer

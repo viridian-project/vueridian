@@ -1,5 +1,9 @@
 <template>
-  <div class="score-blob noselect" v-bind:style="color" v-bind:class="{ 'extreme-score': score > 50 || score < -50 }">
+  <div
+    class="score-blob noselect"
+    v-bind:style="color"
+    v-bind:class="{ 'extreme-score': score > 50 || score < -50 }"
+  >
     <span>{{ text }}</span>
   </div>
 </template>
@@ -33,7 +37,7 @@
 
 <script>
 export default {
-  name: 'ScoreBlob',
-  props: ['color', 'score', 'text']
-}
+  name: "ScoreBlob",
+  props: ["color", "score", "text"]
+};
 </script>
