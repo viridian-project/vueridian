@@ -1,9 +1,9 @@
 <template>
   <div id="page">
-    <HeaderProducts />
+    <HeaderProduct />
     <div id="main-content">
       <h2 class="results-heading">
-        Search results for: <code>{{ this.$route.query.q }}</code>
+        Search results for: <code>{{ $route.params.q }}</code>
       </h2>
       <section id="cards">
         <article v-for="prod in products" :key="prod.id">
@@ -76,7 +76,7 @@ h2.results-heading {
 
 <script>
 // @ is an alias to /src
-import HeaderProducts from "@/components/headers/HeaderProducts.vue";
+import HeaderProduct from "@/components/headers/HeaderProduct.vue";
 import Footer from "@/components/Footer.vue";
 import ScoreBlob from "@/components/widgets/ScoreBlob.vue";
 import ScoreBar from "@/components/widgets/ScoreBar.vue";
@@ -143,7 +143,7 @@ for (let product of productSearchResults) {
     detailedScore: product.score,
     detailedColors: detailedColors,
     detailedPositions: detailedPositions,
-    url: "view?id=" + product.id
+    url: "/product/" + product.id
   });
 }
 let maxPriceLength = 0;
@@ -164,7 +164,7 @@ console.log(products);
 export default {
   name: "ProductsSearch",
   components: {
-    HeaderProducts,
+    HeaderProduct,
     Footer,
     ScoreBlob,
     ScoreBar,

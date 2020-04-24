@@ -1,6 +1,6 @@
 <template>
   <div id="page">
-    <HeaderProducts />
+    <HeaderProduct />
     <div id="main-content">
       <h2 class="results-heading">
         Product: <code>{{ id }}</code>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import HeaderProducts from "@/components/headers/HeaderProducts.vue";
+import HeaderProduct from "@/components/headers/HeaderProduct.vue";
 import Footer from "@/components/Footer.vue";
 
 /*************
@@ -28,14 +28,14 @@ console.log(preferences);
 console.log(productSearchResults);
 
 export default {
-  name: "ProductsView",
+  name: "ProductView",
   components: {
-    HeaderProducts,
+    HeaderProduct,
     Footer
   },
   data: function() {
     return {
-      id: this.$route.query.id
+      id: this.$route.params.id
     }
   }
 };

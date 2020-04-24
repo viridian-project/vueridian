@@ -4,8 +4,7 @@ import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
+const routes = [{
     path: "/",
     name: "Home",
     component: Home
@@ -20,24 +19,28 @@ const routes = [
   //     import(/* webpackChunkName: "about" */ "../views/About.vue")
   // }
   {
-    path: "/products",
-    name: "Products",
-    component: () => import("../views/Products.vue")
+    path: "/product",
+    name: "Product",
+    component: () =>
+      import ("../views/Product.vue")
   },
   {
-    path: "/products/search",
-    name: "ProductsSearch",
-    component: () => import("../views/ProductsSearch.vue")
+    path: "/product/search/:q",
+    name: "ProductSearch",
+    component: () =>
+      import ("../views/ProductSearch.vue")
   },
   {
-    path: "/products/view",
-    name: "ProductsView",
-    component: () => import("../views/ProductsView.vue")
+    path: "/product/:id",
+    name: "ProductView",
+    component: () =>
+      import ("../views/ProductView.vue")
   },
   {
-    path: "/labels",
-    name: "Labels",
-    component: () => import("../views/Labels.vue")
+    path: "/label",
+    name: "Label",
+    component: () =>
+      import ("../views/Label.vue")
   }
 ];
 

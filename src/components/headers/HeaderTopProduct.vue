@@ -79,7 +79,7 @@
           disabled="disabled"
         />
       </div>
-      <router-link v-bind:to="'/products/search?q=' + encodeURIComponent(q)">
+      <router-link v-bind:to="'/product/search/' + encodeURIComponent(q)">
         <img src="@/assets/icons/ionicons/md-send.svg" alt="Submit" />
       </router-link>
     </div>

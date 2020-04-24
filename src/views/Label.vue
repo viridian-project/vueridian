@@ -1,6 +1,6 @@
 <template>
   <div id="page">
-    <HeaderNonProducts />
+    <HeaderNonProduct />
     <div id="main-content">
       <div class="home">
         <img
@@ -16,14 +16,14 @@
 
 <script>
 // @ is an alias to /src
-import HeaderNonProducts from "@/components/headers/HeaderNonProducts.vue";
+import HeaderNonProduct from "@/components/headers/HeaderNonProduct.vue";
 import HelloWorld from "@/components/HelloWorld.vue";
 import Footer from "@/components/Footer.vue";
 
 export default {
   name: "Labels",
   components: {
-    HeaderNonProducts,
+    HeaderNonProduct,
     HelloWorld,
     Footer
   }

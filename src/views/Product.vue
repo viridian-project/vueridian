@@ -1,6 +1,6 @@
 <template>
   <div id="page">
-    <HeaderProducts />
+    <HeaderProduct />
     <div id="main-content">
       <div class="home">
         <img
@@ -21,13 +21,13 @@
 
 <script>
 // @ is an alias to /src
-import HeaderProducts from "@/components/headers/HeaderProducts.vue";
+import HeaderProduct from "@/components/headers/HeaderProduct.vue";
 import Footer from "@/components/Footer.vue";
 
 export default {
-  name: "Products",
+  name: "Product",
   components: {
-    HeaderProducts,
+    HeaderProduct,
     Footer
   }
 };
