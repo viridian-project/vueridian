@@ -8,22 +8,22 @@
       <section id="cards">
         <article v-for="prod in products" :key="prod.id">
           <div class="card-img">
-            <a v-bind:href="prod.url">
+            <router-link :to="prod.url">
               <img v-bind:style="prod.imgStyle" />
-            </a>
+            </router-link>
           </div>
           <div class="card-header">
             <h2 v-bind:title="prod.name">
-              <a v-bind:href="prod.url">{{ prod.name }}</a>
+              <router-link :to="prod.url">{{ prod.name }}</router-link>
             </h2>
           </div>
           <div class="card-quant" v-bind:title="prod.quant">
             {{ prod.quant }}
           </div>
           <div class="card-desc" v-bind:title="prod.desc">
-            <a v-bind:href="prod.url">
+            <router-link :to="prod.url">
               {{ prod.desc }}
-            </a>
+            </router-link>
           </div>
           <div class="card-score">
             <div class="card-score-text">

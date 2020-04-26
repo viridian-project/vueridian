@@ -24,7 +24,7 @@ export default [
     containedProducts: [],
     labels: ["42c2f586-a893-485f-8995-8639446bb6b8"],
     locales: {
-      de: {
+      en: {
         name: "The REAL Hot Chocolate",
         price: "3.99",
         currency: "EUR",
@@ -62,7 +62,7 @@ export default [
     containedProducts: [],
     labels: ["42c2f586-a893-485f-8995-8639446bb6b8"],
     locales: {
-      de: {
+      en: {
         name: "The REAL Hot Chocolate EXTRA",
         price: "4.69",
         currency: "EUR",
@@ -101,7 +101,7 @@ export default [
     containedProducts: [],
     labels: ["42c2f586-a893-485f-8995-8639446bb6b8"],
     locales: {
-      de: {
+      en: {
         name: "The REAL Chocolate Crunchy Cream",
         price: "4.99",
         currency: "EUR",

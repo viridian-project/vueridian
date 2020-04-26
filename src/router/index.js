@@ -4,7 +4,8 @@ import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
-const routes = [{
+const routes = [
+  {
     path: "/",
     name: "Home",
     component: Home
@@ -21,26 +22,22 @@ const routes = [{
   {
     path: "/product",
     name: "Product",
-    component: () =>
-      import ("../views/Product.vue")
+    component: () => import("../views/Product.vue")
   },
   {
     path: "/product/search/:q",
     name: "ProductSearch",
-    component: () =>
-      import ("../views/ProductSearch.vue")
+    component: () => import("../views/ProductSearch.vue")
   },
   {
     path: "/product/:id",
     name: "ProductView",
-    component: () =>
-      import ("../views/ProductView.vue")
+    component: () => import("../views/ProductView.vue")
   },
   {
     path: "/label",
     name: "Label",
-    component: () =>
-      import ("../views/Label.vue")
+    component: () => import("../views/Label.vue")
   }
 ];
 
