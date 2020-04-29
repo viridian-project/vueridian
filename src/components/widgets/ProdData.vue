@@ -26,6 +26,30 @@
   </div>
 </template>
 
+<style scoped>
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px 8px 16px;
+}
+
+.score-blob-row {
+  margin-top: 8px;
+}
+
+.total-score-bar-container {
+  display: flex;
+  justify-content: center;
+  padding: 8px 16px 16px 16px;
+  margin-bottom: 8px;
+}
+
+.total-score-bar {
+  width: 100%;
+}
+</style>
+
 <script>
 import ScoreBlob from "@/components/widgets/ScoreBlob.vue";
 import ScoreBar from "@/components/widgets/ScoreBar.vue";

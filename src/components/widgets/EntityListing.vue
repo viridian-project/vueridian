@@ -124,6 +124,18 @@
   </div>
 </template>
 
+<style scoped>
+.total-score-blob {
+  font-size: 0.9em;
+}
+
+@media (max-width: 535px) {
+  .total-score-blob {
+    font-size: 0.8em;
+  }
+}
+</style>
+
 <script>
 import ScoreBlob from "@/components/widgets/ScoreBlob.vue";
 import Hovercard from "@/components/widgets/Hovercard.vue";

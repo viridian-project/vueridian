@@ -141,6 +141,88 @@
   </div>
 </template>
 
+<style>
+h1 {
+  font-size: 2em;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  h1 {
+    margin-bottom: 16px;
+  }
+}
+
+h2 {
+  font-size: 1.625em;
+}
+
+h3 {
+  font-size: 1.375em;
+}
+
+.detail-data {
+  margin-bottom: 8px;
+}
+
+.detail-data-text {
+  font-weight: bold;
+  white-space: nowrap;
+}
+</style>
+
+<style scoped>
+.detail-box {
+  margin: 16px;
+  padding: 16px;
+  border: 1px solid;
+  box-shadow: 0px 20px 22px -15px black;
+  background-color: #fefefe;
+}
+
+.detail-box > h2 {
+  margin-top: 6px;
+}
+
+#detail-overview-large {
+  display: flex;
+}
+
+#detail-overview-small {
+  display: none;
+  flex-direction: column;
+}
+
+.detail-left-col {
+  width: 268px;
+  display: flex;
+  flex-direction: column;
+  padding-right: 16px;
+}
+
+.detail-right-col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid #c1c1c1;
+  padding-left: 16px;
+}
+
+@media (max-width: 768px) {
+  .detail-left-col {
+    width: 188px;
+  }
+}
+
+@media (max-width: 590px) {
+  #detail-overview-large {
+    display: none;
+  }
+  #detail-overview-small {
+    display: flex;
+  }
+}
+</style>
+
 <script>
 /*******************
  * Load components *

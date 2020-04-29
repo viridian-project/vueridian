@@ -5,6 +5,12 @@
   </div>
 </template>
 
+<style scoped>
+.detail-score {
+  margin-bottom: 16px;
+}
+</style>
+
 <script>
 import ScoreTable from "@/components/widgets/ScoreTable.vue";
 

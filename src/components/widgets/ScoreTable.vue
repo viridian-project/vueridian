@@ -92,6 +92,47 @@
   </table>
 </template>
 
+<style>
+.detail-score-bar .score-bar {
+  height: 12px;
+}
+
+.detail-score-bar > .score-blob-gray {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  margin-left: -10px;
+}
+</style>
+
+<style scoped>
+.score-table {
+  width: 100%;
+  font-weight: bold;
+}
+
+.score-table > tbody > tr > td {
+  padding-right: 16px;
+  padding-bottom: 8px;
+}
+
+.detail-score-bar {
+  width: 100%;
+}
+
+@media (max-width: 360px) {
+  .detail-score-bar {
+    display: none;
+  }
+  .detail-score-blob {
+    float: right;
+  }
+  .score-table > tbody > tr > .detail-score-blob {
+    padding-right: 0;
+  }
+}
+</style>
+
 <script>
 import ScoreBlob from "@/components/widgets/ScoreBlob.vue";
 import ScoreBar from "@/components/widgets/ScoreBar.vue";
