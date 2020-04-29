@@ -528,3 +528,14 @@ footer {
   flex-direction: row;
   align-items: center;
 }
+
+
+/* A horizontal rule acting as a separator */
+
+.separator {
+  width: 100%;
+  height: 0;
+  border-top: 2px solid #c1c1c1;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}

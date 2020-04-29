@@ -100,6 +100,7 @@ const scolor = {
         commentRating = scolor.prepareRating(rating);
       }
       arr.push({
+        id: comment.id,
         title: comment.title,
         text: comment.text,
         voteBalance: comment.weight,

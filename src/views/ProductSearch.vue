@@ -58,7 +58,7 @@
             :has-labels="true"
           />
           <!-- Hovercard with details on the product score: -->
-          <Hovercard :prod="prod" />
+          <Hovercard :entity="prod" />
         </article>
       </section>
     </div>

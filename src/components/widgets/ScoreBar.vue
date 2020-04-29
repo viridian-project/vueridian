@@ -140,6 +140,12 @@
 <script>
 export default {
   name: "ScoreBar",
-  props: ["position", "has-labels"]
+  props: {
+    position: {},
+    "has-labels": {
+      default: false,
+      type: Boolean
+    }
+  }
 };
 </script>

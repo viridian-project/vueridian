@@ -1,6 +1,6 @@
 <template>
   <div
-    v-bind:id="'hovercard-' + prod.id"
+    :id="'hovercard-' + screen + '-' + entity.id"
     class="hovercard"
     style="display: none;"
     data-permanent="false"
@@ -9,54 +9,54 @@
       <div>Environment:</div>
       <ScoreBlob
         class="score-blob-small"
-        v-bind:color="prod.detailedColors.environment"
-        v-bind:score="prod.detailedScore.environment"
-        v-bind:text="prod.detailedScore.environment"
+        v-bind:color="entity.detailedColors.environment"
+        v-bind:score="entity.detailedScore.environment"
+        v-bind:text="entity.detailedScore.environment"
       />
     </div>
     <div class="hovercard-row">
       <div>Climate:</div>
       <ScoreBlob
         class="score-blob-small"
-        v-bind:color="prod.detailedColors.climate"
-        v-bind:score="prod.detailedScore.climate"
-        v-bind:text="prod.detailedScore.climate"
+        v-bind:color="entity.detailedColors.climate"
+        v-bind:score="entity.detailedScore.climate"
+        v-bind:text="entity.detailedScore.climate"
       />
     </div>
     <div class="hovercard-row">
       <div>Society:</div>
       <ScoreBlob
         class="score-blob-small"
-        v-bind:color="prod.detailedColors.society"
-        v-bind:score="prod.detailedScore.society"
-        v-bind:text="prod.detailedScore.society"
+        v-bind:color="entity.detailedColors.society"
+        v-bind:score="entity.detailedScore.society"
+        v-bind:text="entity.detailedScore.society"
       />
     </div>
     <div class="hovercard-row">
       <div>Health:</div>
       <ScoreBlob
         class="score-blob-small"
-        v-bind:color="prod.detailedColors.health"
-        v-bind:score="prod.detailedScore.health"
-        v-bind:text="prod.detailedScore.health"
+        v-bind:color="entity.detailedColors.health"
+        v-bind:score="entity.detailedScore.health"
+        v-bind:text="entity.detailedScore.health"
       />
     </div>
     <div class="hovercard-row">
       <div>Animal welfare:</div>
       <ScoreBlob
         class="score-blob-small"
-        v-bind:color="prod.detailedColors.animalWelfare"
-        v-bind:score="prod.detailedScore.animalWelfare"
-        v-bind:text="prod.detailedScore.animalWelfare"
+        v-bind:color="entity.detailedColors.animalWelfare"
+        v-bind:score="entity.detailedScore.animalWelfare"
+        v-bind:text="entity.detailedScore.animalWelfare"
       />
     </div>
     <div class="hovercard-row">
       <div>Economy:</div>
       <ScoreBlob
         class="score-blob-small"
-        v-bind:color="prod.detailedColors.economy"
-        v-bind:score="prod.detailedScore.economy"
-        v-bind:text="prod.detailedScore.economy"
+        v-bind:color="entity.detailedColors.economy"
+        v-bind:score="entity.detailedScore.economy"
+        v-bind:text="entity.detailedScore.economy"
       />
     </div>
   </div>
@@ -155,7 +155,13 @@
 import ScoreBlob from "@/components/widgets/ScoreBlob.vue";
 export default {
   name: "Hovercard",
-  props: ["prod"],
+  props: {
+    entity: {},
+    screen: {
+      default: "",
+      type: String
+    }
+  },
   components: {
     ScoreBlob
   }

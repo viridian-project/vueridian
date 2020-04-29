@@ -5,6 +5,137 @@
       <h2 class="results-heading">
         Product: <code>{{ id }}</code>
       </h2>
+      <section id="detail-overview">
+        <div id="detail-overview-large" class="detail-box">
+          <div class="detail-left-col">
+            <ProdImg v-bind:prod="prod" />
+            <ProdData v-bind:prod="prod" />
+            <ProdCreated v-bind:prod="prod" />
+          </div>
+          <div class="detail-right-col">
+            <div
+              data-intro="This is the name and a description of the product"
+              data-step="1"
+            >
+              <ProdHeader v-bind:prod="prod" />
+              <ProdDesc v-bind:prod="prod" />
+            </div>
+            <ProdDetailed v-bind:prod="prod" />
+            <ProdInherited
+              screen="wide"
+              v-bind:producers="producers"
+              v-bind:labels="labels"
+              v-bind:product-categories="productCategories"
+              v-bind:contained-products="containedProducts"
+            />
+          </div>
+        </div>
+        <div id="detail-overview-small" class="detail-box">
+          <ProdHeader v-bind:prod="prod" />
+          <ProdImg v-bind:prod="prod" />
+          <ProdDesc v-bind:prod="prod" />
+          <ProdData v-bind:prod="prod" />
+          <ProdDetailed v-bind:prod="prod" />
+          <ProdInherited
+            screen="narrow"
+            v-bind:producers="producers"
+            v-bind:labels="labels"
+            v-bind:product-categories="productCategories"
+            v-bind:contained-products="containedProducts"
+          />
+          <ProdCreated v-bind:prod="prod" />
+        </div>
+      </section>
+      <section id="detail-comments">
+        <div class="detail-box">
+          <h2>General comments on the product:</h2>
+          <Comments
+            class="detail-comment-container"
+            v-bind:comments="comments"
+          />
+          <div v-if="commentsUnpref.length > 0">
+            <h3>Comments in other languages:</h3>
+            <Comments
+              class="detail-comment-container"
+              v-bind:comments="commentsUnpref"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="detail-infos">
+        <div class="button">+ Add information</div>
+        <div class="detail-box">
+          <h2>The product score is based on these ratings:</h2>
+          <div id="detail-info-container">
+            <article v-for="info in informations" :key="info.id">
+              <div class="info-vote-and-text">
+                <VoteWedges v-bind:entity="info" />
+                <div>
+                  <h3>
+                    {{ info.title }}
+                    <span
+                      class="info-badge"
+                      v-bind:class="info.badgeClass"
+                      v-bind:title="info.badgeTooltip"
+                      >{{ info.badgeLabel }}</span
+                    >
+                  </h3>
+                  <p>{{ info.description }}</p>
+                </div>
+              </div>
+              <div class="info-sources-and-users">
+                <div class="info-sources">
+                  <strong v-if="info.sources.length > 1">Sources:</strong>
+                  <strong v-else>Source:</strong>
+                  <ul>
+                    <li v-for="source in info.sources" :key="source.id">
+                      <span
+                        v-if="'authors' in source && source.authors.length > 0"
+                      >
+                        <a v-bind:href="source.url">{{ source.title }}</a
+                        >, ({{ source.authors.join(", ") }}) –
+                      </span>
+                      <span v-else>
+                        <a v-bind:href="source.url">{{ source.title }}</a> –
+                      </span>
+                      accessed <span class="date">{{ source.accessDate }}</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="info-users">
+                  <ProdCreated v-bind:prod="info" />
+                </div>
+              </div>
+              <div v-if="info.rating" class="info-ratings">
+                <h4>Suggested Rating:</h4>
+                <div
+                  class="rating"
+                  v-bind:class="{ negative: info.rating.voteBalance < 0 }"
+                >
+                  <div class="column">
+                    <ScoreTable :entity="info.rating" />
+                  </div>
+                </div>
+              </div>
+              <div class="separator"></div>
+              <div class="info-comments">
+                <h4>Comments:</h4>
+                <Comments
+                  v-bind:comments="info.comments"
+                  class="info-comment-container"
+                />
+                <div v-if="info.commentsUnpref.length > 0">
+                  <h4>Comments in other languages:</h4>
+                  <Comments
+                    v-bind:comments="info.commentsUnpref"
+                    class="info-comment-container"
+                  />
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </div>
     <Footer />
   </div>
@@ -15,6 +146,16 @@
  * Load components *
  *******************/
 import HeaderProduct from "@/components/headers/HeaderProduct.vue";
+import ProdHeader from "@/components/widgets/ProdHeader.vue";
+import ProdImg from "@/components/widgets/ProdImg.vue";
+import ProdDesc from "@/components/widgets/ProdDesc.vue";
+import ProdData from "@/components/widgets/ProdData.vue";
+import ProdDetailed from "@/components/widgets/ProdDetailed.vue";
+import ProdInherited from "@/components/widgets/ProdInherited.vue";
+import ProdCreated from "@/components/widgets/ProdCreated.vue";
+import Comments from "@/components/widgets/Comments.vue";
+import VoteWedges from "@/components/widgets/VoteWedges.vue";
+import ScoreTable from "@/components/widgets/ScoreTable.vue";
 import Footer from "@/components/Footer.vue";
 
 /******************
@@ -57,6 +198,16 @@ export default {
   name: "ProductView",
   components: {
     HeaderProduct,
+    ProdHeader,
+    ProdImg,
+    ProdDesc,
+    ProdData,
+    ProdDetailed,
+    ProdInherited,
+    ProdCreated,
+    Comments,
+    VoteWedges,
+    ScoreTable,
     Footer
   },
   data: function() {
