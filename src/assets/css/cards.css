@@ -86,8 +86,7 @@ section#cards>article>.card-img {
 
 .card-quant,
 .card-price,
-.card-score-text,
-.card-score-blob {
+.card-score-text {
   font-size: 0.9em;
   font-weight: bold;
   white-space: nowrap;
@@ -114,10 +113,6 @@ section#cards>article>.card-img {
 
 .card-score>div {
   margin-right: 16px;
-}
-
-.card-score-blob {
-  cursor: pointer;
 }
 
 .card-score-bar {
@@ -193,8 +188,7 @@ section#cards>article>.card-img {
   }
   .card-quant,
   .card-price,
-  .card-score-text,
-  .card-score-blob {
+  .card-score-text {
     font-size: 0.8em;
   }
   section#cards.price-8-chars>article {

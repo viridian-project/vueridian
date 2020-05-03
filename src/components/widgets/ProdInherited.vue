@@ -66,9 +66,6 @@
   .alternating-boxes > div > h4 {
     margin-bottom: 16px;
   }
-  .entity-listing > div {
-    padding-right: 8px;
-  }
 }
 </style>
 

@@ -29,20 +29,8 @@
             <div class="card-score-text">
               <p>Score:</p>
             </div>
-            <div
-              class="card-score-blob noselect"
-              v-on:click="placeHovercard(prod.id, 'click')"
-              v-on:touchend="placeHovercard(prod.id, 'click')"
-              v-on:mouseover="placeHovercard(prod.id, 'mouseover')"
-              v-on:mouseout="placeHovercard(prod.id, 'mouseout')"
-            >
-              <ScoreBlob
-                v-bind:id="'blob-' + prod.id"
-                v-bind:color="prod.color"
-                v-bind:score="prod.score"
-                v-bind:text="prod.score"
-              />
-            </div>
+            <!-- Hovercard with details on the product score: -->
+            <HovercardScore :entity="prod" />
             <ScoreBar
               class="card-score-bar card-score-bar-regular"
               :position="prod.position"
@@ -57,8 +45,6 @@
             :position="prod.position"
             :has-labels="true"
           />
-          <!-- Hovercard with details on the product score: -->
-          <Hovercard :entity="prod" />
         </article>
       </section>
     </div>
@@ -78,9 +64,8 @@ h2.results-heading {
 // @ is an alias to /src
 import HeaderProduct from "@/components/headers/HeaderProduct.vue";
 import Footer from "@/components/Footer.vue";
-import ScoreBlob from "@/components/widgets/ScoreBlob.vue";
 import ScoreBar from "@/components/widgets/ScoreBar.vue";
-import Hovercard from "@/components/widgets/Hovercard.vue";
+import HovercardScore from "@/components/widgets/HovercardScore.vue";
 
 import preferences from "@/assets/data/preferences.js";
 import productSearchResults from "@/assets/data/products.js";
@@ -166,59 +151,13 @@ export default {
   components: {
     HeaderProduct,
     Footer,
-    ScoreBlob,
     ScoreBar,
-    Hovercard
+    HovercardScore
   },
   data: function() {
     return {
       products: products
     };
-  },
-  methods: {
-    placeHovercard: (id, what) => {
-      let hovercard = document.getElementById("hovercard-" + id);
-      let permanent = hovercard.getAttribute("data-permanent");
-      let show = false;
-      let hide = false;
-      if (permanent == "false" && what == "mouseover") show = true;
-      else if (permanent == "false" && what == "mouseout") hide = true;
-      else if (permanent == "false" && what == "click") {
-        hovercard.setAttribute("data-permanent", true);
-        show = true;
-      } else if (permanent == "true" && what == "click") {
-        hovercard.setAttribute("data-permanent", false);
-        show = false;
-      }
-      if (show) {
-        let blob = document.getElementById("blob-" + id);
-        let rect = blob.getBoundingClientRect();
-        // let windowWidth = (window.innerWidth || document.documentElement.clientWidth ||
-        //   document.body.clientWidth);
-        let windowHeight =
-          window.innerHeight ||
-          document.documentElement.clientHeight ||
-          document.body.clientHeight;
-        let leftOffset = blob.clientWidth;
-        let above = false;
-        if (windowHeight - rect.top < 300) {
-          above = true;
-        }
-        if (!above) {
-          hovercard.classList.remove("hovercard-above");
-          hovercard.style.top = rect.bottom + 10 + "px";
-          hovercard.style.bottom = null;
-        } else {
-          hovercard.classList.add("hovercard-above");
-          hovercard.style.top = null;
-          hovercard.style.bottom = windowHeight - rect.top + 10 + "px";
-        }
-        hovercard.style.left = rect.left - leftOffset + "px";
-        hovercard.style.display = "block";
-      } else if (hide) {
-        hovercard.style.display = "none";
-      }
-    }
   }
 };
 </script>
