@@ -108,8 +108,7 @@ const scolor = {
         createDateUTC: "UTC timestamp: " + comment.createdAt,
         createDate: createDateInLocale,
         createUser: comment.createdBy,
-        createUserAvatar: "images/avatars/" + comment.createdBy + ".png",
-        createUserURL: "user.html#" + comment.createdBy,
+        createUserURL: "/user/" + comment.createdBy,
         rating: commentRating
       });
     }

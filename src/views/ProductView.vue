@@ -10,7 +10,7 @@
           <div class="detail-left-col">
             <ProdImg :prod="prod" />
             <ProdData :prod="prod" />
-            <ProdCreated :entity="prod" />
+            <EntityCreated :entity="prod" />
           </div>
           <div class="detail-right-col">
             <div
@@ -43,7 +43,7 @@
             :product-categories="productCategories"
             :contained-products="containedProducts"
           />
-          <ProdCreated :entity="prod" />
+          <EntityCreated :entity="prod" />
         </div>
       </section>
       <section id="detail-comments">
@@ -100,7 +100,7 @@
                   </ul>
                 </div>
                 <div class="info-users">
-                  <ProdCreated :entity="info" />
+                  <EntityCreated :entity="info" />
                 </div>
               </div>
               <div v-if="info.rating" class="info-ratings">
@@ -231,7 +231,7 @@ import ProdDesc from "@/components/widgets/ProdDesc.vue";
 import ProdData from "@/components/widgets/ProdData.vue";
 import ProdDetailed from "@/components/widgets/ProdDetailed.vue";
 import ProdInherited from "@/components/widgets/ProdInherited.vue";
-import ProdCreated from "@/components/widgets/ProdCreated.vue";
+import EntityCreated from "@/components/widgets/EntityCreated.vue";
 import Comments from "@/components/widgets/Comments.vue";
 import VoteWedges from "@/components/widgets/VoteWedges.vue";
 import ScoreTable from "@/components/widgets/ScoreTable.vue";
@@ -284,7 +284,7 @@ export default {
     ProdData,
     ProdDetailed,
     ProdInherited,
-    ProdCreated,
+    EntityCreated,
     Comments,
     VoteWedges,
     ScoreTable,

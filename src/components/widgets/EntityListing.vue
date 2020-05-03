@@ -22,7 +22,7 @@
           <img
             v-bind:id="'info-' + screen + '-' + entity.id"
             class="vote-info"
-            src="icons/ionicons/md-information-circle.svg"
+            src="@/assets/icons/ionicons/md-information-circle.svg"
             alt="information"
             v-on:click="
               placeInfoHovercard(
@@ -111,7 +111,7 @@
         <div>
           <a v-bind:href="entity.url">
             <img
-              v-bind:src="entity.logo"
+              v-bind:src="loadImg(entity.logo)"
               v-bind:alt="entity.name + ' Logo'"
               class="logo"
             />
@@ -129,14 +129,25 @@
   font-size: 0.9em;
 }
 
+.logo {
+  max-width: 80px;
+  max-height: 80px;
+}
+
 @media (max-width: 535px) {
   .total-score-blob {
     font-size: 0.8em;
+  }
+  .logo {
+    max-width: 50px;
+    max-height: 50px;
   }
 }
 </style>
 
 <script>
+import fhandling from "@/assets/js/file-handling.js";
+
 import ScoreBlob from "@/components/widgets/ScoreBlob.vue";
 import Hovercard from "@/components/widgets/Hovercard.vue";
 
@@ -166,6 +177,7 @@ export default {
     Hovercard
   },
   methods: {
+    loadImg: fhandling.loadImg,
     placeInfoHovercard: (hovercard_id, button_id, what) => {
       let hovercard = document.getElementById(hovercard_id);
       let permanent = hovercard.getAttribute("data-permanent");

@@ -34,6 +34,44 @@
   </div>
 </template>
 
+<style scoped>
+.alternating-boxes > div {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  padding-top: 16px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  margin-bottom: 8px;
+}
+
+.alternating-boxes > div > h4 {
+  margin-top: 0;
+}
+
+.alternating-boxes > div:nth-child(odd) {
+  background-color: whitesmoke;
+}
+
+.alternating-boxes > div:nth-child(even) {
+  background-color: lavender;
+}
+
+@media (max-width: 535px) {
+  .alternating-boxes > div {
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-bottom: 0;
+  }
+  .alternating-boxes > div > h4 {
+    margin-bottom: 16px;
+  }
+  .entity-listing > div {
+    padding-right: 8px;
+  }
+}
+</style>
+
 <script>
 import EntityListing from "@/components/widgets/EntityListing.vue";
 
