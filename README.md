@@ -73,5 +73,11 @@ npm run test:unit
 npm run lint
 ```
 
+### Practical command for devlopment
+Use this e.g. in the terminal of VS Code to do both linting and compiling:
+```
+npm run lint; npm run serve
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
