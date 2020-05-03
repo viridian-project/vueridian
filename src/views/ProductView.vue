@@ -8,56 +8,53 @@
       <section id="detail-overview">
         <div id="detail-overview-large" class="detail-box">
           <div class="detail-left-col">
-            <ProdImg v-bind:prod="prod" />
-            <ProdData v-bind:prod="prod" />
-            <ProdCreated v-bind:prod="prod" />
+            <ProdImg :prod="prod" />
+            <ProdData :prod="prod" />
+            <ProdCreated :entity="prod" />
           </div>
           <div class="detail-right-col">
             <div
               data-intro="This is the name and a description of the product"
               data-step="1"
             >
-              <ProdHeader v-bind:prod="prod" />
-              <ProdDesc v-bind:prod="prod" />
+              <ProdHeader :prod="prod" />
+              <ProdDesc :prod="prod" />
             </div>
-            <ProdDetailed v-bind:prod="prod" />
+            <ProdDetailed :prod="prod" />
             <ProdInherited
               screen="wide"
-              v-bind:producers="producers"
-              v-bind:labels="labels"
-              v-bind:product-categories="productCategories"
-              v-bind:contained-products="containedProducts"
+              :producers="producers"
+              :labels="labels"
+              :product-categories="productCategories"
+              :contained-products="containedProducts"
             />
           </div>
         </div>
         <div id="detail-overview-small" class="detail-box">
-          <ProdHeader v-bind:prod="prod" />
-          <ProdImg v-bind:prod="prod" />
-          <ProdDesc v-bind:prod="prod" />
-          <ProdData v-bind:prod="prod" />
-          <ProdDetailed v-bind:prod="prod" />
+          <ProdHeader :prod="prod" />
+          <ProdImg :prod="prod" />
+          <ProdDesc :prod="prod" />
+          <ProdData :prod="prod" />
+          <ProdDetailed :prod="prod" />
           <ProdInherited
             screen="narrow"
-            v-bind:producers="producers"
-            v-bind:labels="labels"
-            v-bind:product-categories="productCategories"
-            v-bind:contained-products="containedProducts"
+            :producers="producers"
+            :labels="labels"
+            :product-categories="productCategories"
+            :contained-products="containedProducts"
           />
-          <ProdCreated v-bind:prod="prod" />
+          <ProdCreated :entity="prod" />
         </div>
       </section>
       <section id="detail-comments">
         <div class="detail-box">
           <h2>General comments on the product:</h2>
-          <Comments
-            class="detail-comment-container"
-            v-bind:comments="comments"
-          />
+          <Comments class="detail-comment-container" :comments="comments" />
           <div v-if="commentsUnpref.length > 0">
             <h3>Comments in other languages:</h3>
             <Comments
               class="detail-comment-container"
-              v-bind:comments="commentsUnpref"
+              :comments="commentsUnpref"
             />
           </div>
         </div>
@@ -69,14 +66,14 @@
           <div id="detail-info-container">
             <article v-for="info in informations" :key="info.id">
               <div class="info-vote-and-text">
-                <VoteWedges v-bind:entity="info" />
+                <VoteWedges :entity="info" />
                 <div>
                   <h3>
                     {{ info.title }}
                     <span
                       class="info-badge"
-                      v-bind:class="info.badgeClass"
-                      v-bind:title="info.badgeTooltip"
+                      :class="info.badgeClass"
+                      :title="info.badgeTooltip"
                       >{{ info.badgeLabel }}</span
                     >
                   </h3>
@@ -92,25 +89,25 @@
                       <span
                         v-if="'authors' in source && source.authors.length > 0"
                       >
-                        <a v-bind:href="source.url">{{ source.title }}</a
+                        <a :href="source.url">{{ source.title }}</a
                         >, ({{ source.authors.join(", ") }}) –
                       </span>
                       <span v-else>
-                        <a v-bind:href="source.url">{{ source.title }}</a> –
+                        <a :href="source.url">{{ source.title }}</a> –
                       </span>
                       accessed <span class="date">{{ source.accessDate }}</span>
                     </li>
                   </ul>
                 </div>
                 <div class="info-users">
-                  <ProdCreated v-bind:prod="info" />
+                  <ProdCreated :entity="info" />
                 </div>
               </div>
               <div v-if="info.rating" class="info-ratings">
                 <h4>Suggested Rating:</h4>
                 <div
                   class="rating"
-                  v-bind:class="{ negative: info.rating.voteBalance < 0 }"
+                  :class="{ negative: info.rating.voteBalance < 0 }"
                 >
                   <div class="column">
                     <ScoreTable :entity="info.rating" />
@@ -121,13 +118,13 @@
               <div class="info-comments">
                 <h4>Comments:</h4>
                 <Comments
-                  v-bind:comments="info.comments"
+                  :comments="info.comments"
                   class="info-comment-container"
                 />
                 <div v-if="info.commentsUnpref.length > 0">
                   <h4>Comments in other languages:</h4>
                   <Comments
-                    v-bind:comments="info.commentsUnpref"
+                    :comments="info.commentsUnpref"
                     class="info-comment-container"
                   />
                 </div>
@@ -259,6 +256,7 @@ import commentsProduct from "@/assets/data/comments-product.js";
 import informations from "@/assets/data/informations.js";
 import ratings from "@/assets/data/ratings.js";
 import commentsInformations from "@/assets/data/comments-informations.js";
+import users from "@/assets/data/users.js";
 
 /******************
  * Global options *
@@ -299,9 +297,13 @@ export default {
   },
   computed: {
     product: function() {
+      /* This would be a DB query for the product in reality: */
       let index = -1;
       for (let i = 0; index < 0 && i < productSearchResults.length; i++) {
-        if (productSearchResults[i].id === this.id) index = i;
+        if (productSearchResults[i].id === this.id) {
+          index = i;
+          break;
+        }
       }
       return productSearchResults[index];
     },
@@ -331,6 +333,15 @@ export default {
         this.product,
         preferences
       );
+      /* This would be a DB query for the user info in reality: */
+      let index = -1;
+      for (let i = 0; index < 0 && i < users.length; i++) {
+        if (users[i].name === this.product.createdBy) {
+          index = i;
+          break;
+        }
+      }
+      let user = users[index];
       return {
         name: prefLocale.name,
         desc: prefLocale.description,
@@ -359,8 +370,9 @@ export default {
         createDateUTC: "UTC timestamp: " + this.product.createdAt,
         createDate: this.createDateInLocale,
         createUser: this.product.createdBy,
-        createUserAvatar: "images/avatars/" + this.product.createdBy + ".png",
-        createUserURL: "user.html#" + this.product.createdBy
+        createUserAvatar: user.avatarUrl,
+        createUserReputation: user.reputation,
+        createUserURL: "/user/" + this.product.createdBy
       };
     },
     productCategories: () => [],
@@ -540,6 +552,15 @@ export default {
           preferences.locale,
           datetimeOptions
         ).format(createDate);
+        /* This would be a DB query for the user info in reality: */
+        let index = -1;
+        for (let i = 0; index < 0 && i < users.length; i++) {
+          if (users[i].name === info.createdBy) {
+            index = i;
+            break;
+          }
+        }
+        let user = users[index];
         infos.push({
           id: info.id,
           badgeClass: badgeClass,
@@ -553,8 +574,9 @@ export default {
           createDateUTC: "UTC timestamp: " + info.createdAt,
           createDate: createDateInLocale,
           createUser: info.createdBy,
-          createUserAvatar: "images/avatars/" + info.createdBy + ".png",
-          createUserURL: "user.html#" + info.createdBy,
+          createUserAvatar: user.avatarUrl,
+          createUserReputation: user.reputation,
+          createUserURL: "/user/" + info.createdBy,
           rating: infoRating,
           comments: infoComments,
           commentsUnpref: infoCommentsUnpref
