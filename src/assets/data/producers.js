@@ -23,7 +23,7 @@ export default [
         description: "",
         address: "42 port road, Bristol, Großbritannien",
         logoUrls: [
-          "images/AnyCompany_Logo.png",
+          "images/AnyCompany_Logo.svg",
           "https://upload.wikimedia.org/wikipedia/commons/9/92/AnyCompany_Logo.svg"
         ],
         urls: ["https://www.anycompany.co.uk/"]
