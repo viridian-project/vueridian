@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="hovercard-container">
     <div
       class="total-score-blob detail-data-text noselect pointer"
       v-on:click="
@@ -105,6 +105,44 @@
 <style src="@/assets/css/hovercard.css"></style>
 
 <style scoped>
+.hovercard {
+  width: 200px;
+  left: -20px;
+}
+
+.hovercard-above {
+  bottom: 50px;
+}
+
+.hovercard-below {
+  top: 50px;
+}
+
+/* arrow position: */
+.hovercard::before {
+  left: 28px;
+}
+
+.hovercard::after {
+  left: 30px;
+}
+
+@media (max-width: 535px) {
+  .hovercard-above {
+    bottom: 40px;
+  }
+  .hovercard-below {
+    top: 40px;
+  }
+  /* arrow position: */
+  .hovercard::before {
+    left: 23px;
+  }
+  .hovercard::after {
+    left: 25px;
+  }
+}
+
 .total-score-blob {
   font-size: 0.9em;
 }

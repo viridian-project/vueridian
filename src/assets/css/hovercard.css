@@ -2,11 +2,13 @@
 * Github style hovercard (https://time2hack.com/jquery-tutorial-build-hovercards-for-your-website/)
 */
 
+.hovercard-container {
+  position: relative;
+}
+
 .hovercard {
   display: none;
   position: absolute;
-  width: 200px;
-  max-width: 75%;
   padding: 10px;
   border: 1px solid #aaa;
   border-radius: 3px;
@@ -54,13 +56,4 @@
   top: 100%;
   border-top: 10px solid #fff;
   border-bottom: none;
-}
-
-@media (max-width: 535px) {
-  .hovercard::before {
-    left: 33px;
-  }
-  .hovercard::after {
-    left: 35px;
-  }
 }
