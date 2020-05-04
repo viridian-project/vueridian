@@ -14,7 +14,7 @@
     <HovercardInfoOnAnything
       v-if="infoText"
       :id="screen + '-' + entityName + '-s-' + entity.id"
-      left="-23"
+      left="-10"
       arrow-left="20"
       above-bottom="35"
       below-top="35"
@@ -26,6 +26,7 @@
         <slot></slot>
       </template>
     </HovercardInfoOnAnything>
+    <div v-else class="vote-balance">{{ entity.voteBalance }}</div>
     <div
       class="vote-wedge vote-wedge-down"
       v-bind:class="{ voted: entity.vote === -1 }"
@@ -76,6 +77,8 @@
 }
 
 .vote-balance {
+  width: 46px;
+  text-align: center;
   color: dimgray;
   font-weight: bold;
 }
