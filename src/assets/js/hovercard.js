@@ -15,8 +15,7 @@ const hcard = {
         show = false;
       }
       if (show) {
-        let blob = document.getElementById(button_id);
-        let rect = blob.getBoundingClientRect();
+        let rect = document.getElementById(button_id).getBoundingClientRect();
         let windowWidth =
           window.innerWidth ||
           document.documentElement.clientWidth ||
@@ -25,27 +24,22 @@ const hcard = {
           window.innerHeight ||
           document.documentElement.clientHeight ||
           document.body.clientHeight;
-        // let leftOffset = blob.clientWidth;
-        let above = aboveStrategy(windowHeight, rect.top);
+        hovercard.style.display = "block"; // need to display it to access its dimensions
+        let hcardRect = hovercard.getBoundingClientRect();
+        let above = aboveStrategy(windowHeight, hcardRect.height, rect.top);
         if (!above) {
           hovercard.classList.remove("hovercard-above");
           hovercard.classList.add("hovercard-below");
-          // hovercard.style.top = rect.bottom + 10 + "px";
-          // hovercard.style.bottom = null;
         } else {
           hovercard.classList.remove("hovercard-below");
           hovercard.classList.add("hovercard-above");
-          // hovercard.style.top = null;
-          // hovercard.style.bottom = windowHeight - rect.top + 10 + "px";
         }
-        // hovercard.style.left = rect.left - leftOffset + "px";
-        hovercard.style.display = "block";
         hovercard.style.maxWidth = null;
         // check if hovercard does not fit on screen and act if so:
-        if (hovercard.getBoundingClientRect().right > windowWidth) {
+        if (hcardRect.right > windowWidth) {
           hovercard.style.maxWidth =
             windowWidth -
-            hovercard.getBoundingClientRect().left -
+            hcardRect.left -
             20 - // 20px is the padding of the hovercard
             20 + // add 20px extra space for scroll bar etc.
             "px";

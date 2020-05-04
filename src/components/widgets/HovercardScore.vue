@@ -178,9 +178,14 @@ export default {
     ScoreBlob
   },
   methods: {
-    placeScoreHovercard: hcard.placeHovercard(function(windowHeight, rectTop) {
+    placeScoreHovercard: hcard.placeHovercard(function(
+      windowHeight,
+      hcardHeight,
+      rectTop
+    ) {
       let above = false;
-      if (windowHeight - rectTop < 300) {
+      if (windowHeight - rectTop - 102 < hcardHeight) {
+        // 80px space for footer, 22px is padding and borders
         above = true;
       }
       return above;

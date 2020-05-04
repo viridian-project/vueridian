@@ -2,9 +2,7 @@
   <div class="vote hcenter">
     <HovercardInfo
       v-if="infoText"
-      :screen="screen"
-      :name="entityName"
-      :id="entity.id"
+      :id="screen + '-' + entityName + '-i-' + entity.id"
     >
       <slot></slot>
     </HovercardInfo>
@@ -13,7 +11,21 @@
       v-bind:class="{ voted: entity.vote === 1 }"
       v-on:click="voteUp(entity)"
     ></div>
-    <div class="vote-balance">{{ entity.voteBalance }}</div>
+    <HovercardInfoOnAnything
+      v-if="infoText"
+      :id="screen + '-' + entityName + '-s-' + entity.id"
+      left="-23"
+      arrow-left="20"
+      above-bottom="35"
+      below-top="35"
+    >
+      <template v-slot:anything>
+        <div class="vote-balance">{{ entity.voteBalance }}</div>
+      </template>
+      <template v-slot:infotext>
+        <slot></slot>
+      </template>
+    </HovercardInfoOnAnything>
     <div
       class="vote-wedge vote-wedge-down"
       v-bind:class="{ voted: entity.vote === -1 }"
@@ -71,6 +83,7 @@
 
 <script>
 import HovercardInfo from "@/components/widgets/HovercardInfo.vue";
+import HovercardInfoOnAnything from "@/components/widgets/HovercardInfoOnAnything.vue";
 
 const voteUp = entity => {
   if (entity.vote < 1) {
@@ -96,7 +109,8 @@ export default {
     }
   },
   components: {
-    HovercardInfo
+    HovercardInfo,
+    HovercardInfoOnAnything
   },
   methods: {
     voteUp: voteUp,

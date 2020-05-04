@@ -1,10 +1,8 @@
 <template>
   <div class="hovercard-container">
-    <img
+    <div
       v-bind:id="'info-' + id"
-      class="info-icon"
-      src="@/assets/icons/ionicons/md-information-circle.svg"
-      alt="information"
+      class="info-anything"
       v-on:click="
         placeInfoHovercard('info-hovercard-' + id, 'info-' + id, 'click')
       "
@@ -17,14 +15,17 @@
       v-on:mouseout="
         placeInfoHovercard('info-hovercard-' + id, 'info-' + id, 'mouseout')
       "
-    />
+    >
+      <slot name="anything"></slot>
+    </div>
     <div
       v-bind:id="'info-hovercard-' + id"
       class="hovercard hovercard-info"
       style="display: none;"
+      :style="cssProps"
       data-permanent="false"
     >
-      <slot></slot>
+      <slot name="infotext"></slot>
     </div>
   </div>
 </template>
@@ -32,41 +33,64 @@
 <style src="@/assets/css/hovercard.css"></style>
 
 <style scoped>
-.info-icon {
-  width: 25px;
-  position: absolute;
-  top: -10px;
-  left: 15px;
+.info-anything {
   cursor: pointer;
 }
 
 .hovercard {
   width: 300px;
+  left: var(--left);
   font-weight: normal;
 }
 
 .hovercard-above {
-  bottom: 20px;
+  bottom: var(--above-bottom);
 }
 
 .hovercard-below {
-  top: 25px;
+  top: var(--below-top);
 }
 
 .hovercard::before {
-  left: 15px;
+  left: var(--arrow-left);
 }
 
 .hovercard::after {
-  left: 17px;
+  left: var(--arrow-left-plus-two);
 }
 </style>
 
 <script>
 import hcard from "@/assets/js/hovercard.js"; // load shared hovercard placement code
 export default {
-  name: "HovercardInfo",
-  props: ["id"],
+  name: "HovercardInfoOnAnything",
+  props: {
+    id: {},
+    left: {
+      default: 0
+    },
+    "above-bottom": {
+      default: 20
+    },
+    "below-top": {
+      default: 25
+    },
+    "arrow-left": {
+      default: 15
+    }
+  },
+  computed: {
+    // https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css
+    cssProps: function() {
+      return {
+        "--left": this.left + "px",
+        "--above-bottom": this.aboveBottom + "px",
+        "--below-top": this.belowTop + "px",
+        "--arrow-left": this.arrowLeft + "px",
+        "--arrow-left-plus-two": parseInt(this.arrowLeft) + 2 + "px"
+      };
+    }
+  },
   methods: {
     placeInfoHovercard: hcard.placeHovercard(function(
       windowHeight,
