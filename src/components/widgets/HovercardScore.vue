@@ -125,6 +125,7 @@
 </style>
 
 <script>
+import hcard from "@/assets/js/hovercard.js"; // load shared hovercard placement code
 import ScoreBlob from "@/components/widgets/ScoreBlob.vue";
 export default {
   name: "HovercardScore",
@@ -139,47 +140,13 @@ export default {
     ScoreBlob
   },
   methods: {
-    placeScoreHovercard: (hovercard_id, button_id, what) => {
-      let hovercard = document.getElementById(hovercard_id);
-      let permanent = hovercard.getAttribute("data-permanent");
-      let show = false;
-      let hide = false;
-      if (permanent === "false" && what === "mouseover") show = true;
-      else if (permanent === "false" && what === "mouseout") hide = true;
-      else if (permanent === "false" && what === "click") {
-        hovercard.setAttribute("data-permanent", true);
-        show = true;
-      } else if (permanent === "true" && what === "click") {
-        hovercard.setAttribute("data-permanent", false);
-        show = false;
+    placeScoreHovercard: hcard.placeHovercard(function(windowHeight, rectTop) {
+      let above = false;
+      if (windowHeight - rectTop < 300) {
+        above = true;
       }
-      if (show) {
-        let blob = document.getElementById(button_id);
-        let rect = blob.getBoundingClientRect();
-        let windowHeight =
-          window.innerHeight ||
-          document.documentElement.clientHeight ||
-          document.body.clientHeight;
-        let leftOffset = blob.clientWidth;
-        let above = false;
-        if (windowHeight - rect.top < 300) {
-          above = true;
-        }
-        if (!above) {
-          hovercard.classList.remove("hovercard-above");
-          hovercard.style.top = rect.bottom + 10 + "px";
-          hovercard.style.bottom = null;
-        } else {
-          hovercard.classList.add("hovercard-above");
-          hovercard.style.top = null;
-          hovercard.style.bottom = windowHeight - rect.top + 10 + "px";
-        }
-        hovercard.style.left = rect.left - leftOffset + "px";
-        hovercard.style.display = "block";
-      } else if (hide) {
-        hovercard.style.display = "none";
-      }
-    }
+      return above;
+    })
   }
 };
 </script>
