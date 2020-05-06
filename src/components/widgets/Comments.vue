@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="comments-container">
     <div
       v-for="comment in comments"
       :key="comment.id"
@@ -37,6 +37,22 @@
     </div>
   </div>
 </template>
+
+<style src="@/assets/css/comments-ratings.css"></style>
+
+<style scoped>
+.comments-container > div:nth-child(odd) {
+  background-color: whitesmoke;
+}
+
+.comments-container > div:nth-child(even) {
+  background-color: lavender;
+}
+
+.meta-compact {
+  text-align: right;
+}
+</style>
 
 <script>
 import VoteWedges from "@/components/widgets/VoteWedges.vue";

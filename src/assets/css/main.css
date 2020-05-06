@@ -543,3 +543,7 @@ footer {
 .date {
   color: #555;
 }
+
+.negative {
+  opacity: 0.5;
+}

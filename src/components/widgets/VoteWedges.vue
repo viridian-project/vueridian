@@ -9,7 +9,7 @@
     <div
       class="vote-wedge vote-wedge-up"
       v-bind:class="{ voted: entity.vote === 1 }"
-      v-on:click="voteUp(entity)"
+      v-on:click="voteUp()"
     ></div>
     <HovercardInfoOnAnything
       v-if="infoText"
@@ -30,7 +30,7 @@
     <div
       class="vote-wedge vote-wedge-down"
       v-bind:class="{ voted: entity.vote === -1 }"
-      v-on:click="voteDown(entity)"
+      v-on:click="voteDown()"
     ></div>
   </div>
 </template>
@@ -88,19 +88,6 @@
 import HovercardInfo from "@/components/widgets/HovercardInfo.vue";
 import HovercardInfoOnAnything from "@/components/widgets/HovercardInfoOnAnything.vue";
 
-const voteUp = entity => {
-  if (entity.vote < 1) {
-    entity.voteBalance += 1;
-    entity.vote += 1;
-  }
-};
-const voteDown = entity => {
-  if (entity.vote > -1) {
-    entity.voteBalance -= 1;
-    entity.vote -= 1;
-  }
-};
-
 export default {
   props: {
     entity: {},
@@ -116,8 +103,24 @@ export default {
     HovercardInfoOnAnything
   },
   methods: {
-    voteUp: voteUp,
-    voteDown: voteDown
+    voteUp: function() {
+      console.log("UP!!!!");
+      console.log(this.entity.voteBalance);
+      if (this.entity.vote < 1) {
+        this.entity.voteBalance += 1;
+        this.entity.vote += 1;
+      }
+      console.log(this.entity.voteBalance);
+    },
+    voteDown: function() {
+      console.log("DOWN!!!!");
+      console.log(this.entity.voteBalance);
+      if (this.entity.vote > -1) {
+        this.entity.voteBalance -= 1;
+        this.entity.vote -= 1;
+      }
+      console.log(this.entity.voteBalance);
+    }
   }
 };
 </script>

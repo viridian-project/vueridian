@@ -1,0 +1,126 @@
+/*****************
+* Infos          *
+*****************/
+
+.info-comment-container>div {
+  background-color: lightgray;
+}
+
+#detail-info-container>article {
+  padding: 16px;
+}
+
+#detail-info-container>article:nth-child(odd) {
+  background-color: whitesmoke;
+}
+
+#detail-info-container>article:nth-child(even) {
+  background-color: lavender;
+}
+
+@media (max-width: 535px) {
+  #detail-info-container>article {
+    padding: 8px;
+    /* padding-right: 8px; */
+  }
+  #detail-info-container>article>h4 {
+    margin-bottom: 16px;
+  }
+}
+
+.info-vote-and-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.info-vote-and-text h3 {
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.info-sources-and-users {
+  display: flex;
+}
+
+.info-sources {
+  width: 70%;
+}
+
+.info-users {
+  width: 30%;
+}
+
+@media (max-width: 590px) {
+  .info-sources-and-users {
+    display: block;
+  }
+  .info-sources {
+    width: 100%;
+  }
+  .info-users {
+    width: 100%;
+  }
+}
+
+
+/*********************
+* Information badges *
+*********************/
+
+.info-badge {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 5px;
+  vertical-align: super;
+}
+
+.badge-general {
+  background-color: green;
+  color: white;
+}
+
+.badge-lca {
+  background-color: red;
+  color: white;
+}
+
+.badge-ext {
+  background-color: blue;
+  color: white;
+}
+
+.badge-report {
+  background-color: yellow;
+}
+
+.badge-paper {
+  background-color: orangered;
+}
+
+.badge-media {
+  background-color: hotpink;
+  /* color: white; */
+}
+
+.badge-investigative {
+  background-color: darkslategray;
+  color: white;
+}
+
+.badge-csr {
+  background-color: blueviolet;
+  color: white;
+}
+
+.badge-juris {
+  background-color: dimgray;
+  color: white;
+}
+
+.badge-other {
+  background-color: gainsboro;
+}

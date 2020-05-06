@@ -2,9 +2,6 @@
   <div id="page">
     <HeaderProduct />
     <div id="main-content">
-      <h2 class="results-heading">
-        Product: <code>{{ id }}</code>
-      </h2>
       <section id="detail-overview">
         <div id="detail-overview-large" class="detail-box">
           <div class="detail-left-col">
@@ -49,13 +46,10 @@
       <section id="detail-comments">
         <div class="detail-box">
           <h2>General comments on the product:</h2>
-          <Comments class="detail-comment-container" :comments="comments" />
+          <Comments :comments="comments" />
           <div v-if="commentsUnpref.length > 0">
             <h3>Comments in other languages:</h3>
-            <Comments
-              class="detail-comment-container"
-              :comments="commentsUnpref"
-            />
+            <Comments :comments="commentsUnpref" />
           </div>
         </div>
       </section>
@@ -137,6 +131,9 @@
     <Footer />
   </div>
 </template>
+
+<style src="@/assets/css/comments-ratings.css"></style>
+<style src="@/assets/css/info-badges.css"></style>
 
 <style>
 h1 {
