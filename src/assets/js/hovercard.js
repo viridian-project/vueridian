@@ -4,9 +4,8 @@ const hcard = {
       let hovercard = document.getElementById(hovercard_id);
       let permanent = hovercard.getAttribute("data-permanent");
       let show = false;
-      let hide = false;
       if (permanent === "false" && what === "mouseover") show = true;
-      else if (permanent === "false" && what === "mouseout") hide = true;
+      else if (permanent === "false" && what === "mouseout") show = false;
       else if (permanent === "false" && what === "click") {
         hovercard.setAttribute("data-permanent", true);
         show = true;
@@ -44,7 +43,7 @@ const hcard = {
             20 + // add 20px extra space for scroll bar etc.
             "px";
         }
-      } else if (hide) {
+      } else {
         hovercard.style.display = "none";
       }
     };
