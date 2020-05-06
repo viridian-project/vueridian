@@ -98,6 +98,11 @@ export default {
       type: Boolean
     }
   },
+  data: function() {
+    return {
+      ent: this.entity // need to add this here to make the 'prop' entity reactive
+    };
+  },
   components: {
     HovercardInfo,
     HovercardInfoOnAnything
