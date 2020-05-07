@@ -109,22 +109,16 @@ export default {
   },
   methods: {
     voteUp: function() {
-      console.log("UP!!!!");
-      console.log(this.entity.voteBalance);
       if (this.entity.vote < 1) {
         this.entity.voteBalance += 1;
         this.entity.vote += 1;
       }
-      console.log(this.entity.voteBalance);
     },
     voteDown: function() {
-      console.log("DOWN!!!!");
-      console.log(this.entity.voteBalance);
       if (this.entity.vote > -1) {
         this.entity.voteBalance -= 1;
         this.entity.vote -= 1;
       }
-      console.log(this.entity.voteBalance);
     }
   }
 };
