@@ -10,13 +10,8 @@
             <EntityCreated :entity="prod" />
           </div>
           <div class="detail-right-col">
-            <div
-              data-intro="This is the name and a description of the product"
-              data-step="1"
-            >
-              <ProdHeader :prod="prod" />
-              <ProdDesc :prod="prod" />
-            </div>
+            <ProdHeader :prod="prod" />
+            <ProdDesc :prod="prod" />
             <ProdDetailed :prod="prod" />
             <ProdInherited
               screen="wide"

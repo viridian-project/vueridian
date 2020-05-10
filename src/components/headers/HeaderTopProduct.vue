@@ -22,7 +22,7 @@
             </a>
           </li>
           <li>
-            <a href="javascript:void(0);">Tour</a>
+            <a class="tour-btn" href="javascript:void(0);">Tour</a>
           </li>
         </ul>
       </nav>
