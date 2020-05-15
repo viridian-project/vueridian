@@ -81,3 +81,11 @@ npm run lint; npm run serve
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+## Add more dependencies
+
+For tour guide:
+```
+npm install driver.js
+```

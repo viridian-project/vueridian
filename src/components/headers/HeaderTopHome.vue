@@ -12,7 +12,7 @@
       <nav>
         <ul>
           <li>
-            <a class="tour-btn" href="javascript:void(0);">Tour</a>
+            <a href="javascript:void(0);" @click.stop="tourGuide">Tour</a>
           </li>
         </ul>
       </nav>
@@ -21,5 +21,13 @@
 </template>
 
 <script>
+import TourGuide from "@/assets/js/tour-guide.js";
 
+export default {
+  methods: {
+    tourGuide: function() {
+      TourGuide.startTour();
+    }
+  }
+};
 </script>
