@@ -23,7 +23,7 @@ export default [
         description: "",
         categories: ["Lebensmittel"],
         logoUrls: [
-          "images/Utz_certified_logo.svg",
+          "/img/logos/Utz_certified_logo.svg",
           "https://upload.wikimedia.org/wikipedia/commons/3/3b/Utz_certified_logo.svg"
         ],
         urls: [
@@ -37,7 +37,7 @@ export default [
         description: "",
         categories: ["Food"],
         logoUrls: [
-          "images/Utz_certified_logo.svg",
+          "/img/logos/Utz_certified_logo.svg",
           "https://upload.wikimedia.org/wikipedia/commons/3/3b/Utz_certified_logo.svg"
         ],
         urls: [
@@ -51,7 +51,7 @@ export default [
         description: "",
         categories: ["Nourriture"],
         logoUrls: [
-          "images/Utz_certified_logo.svg",
+          "/img/logos/Utz_certified_logo.svg",
           "https://upload.wikimedia.org/wikipedia/commons/3/3b/Utz_certified_logo.svg"
         ],
         urls: [
@@ -87,7 +87,7 @@ export default [
         description: "",
         categories: ["Lebensmittel"],
         logoUrls: [
-          "images/Bioland_Logo_2012.svg",
+          "/img/logos/Bioland_Logo_2012.svg",
           "https://upload.wikimedia.org/wikipedia/commons/9/99/Bioland_Logo_2012.svg"
         ],
         urls: [
@@ -101,7 +101,7 @@ export default [
         description: "",
         categories: ["Food"],
         logoUrls: [
-          "images/Bioland_Logo_2012.svg",
+          "/img/logos/Bioland_Logo_2012.svg",
           "https://upload.wikimedia.org/wikipedia/commons/9/99/Bioland_Logo_2012.svg"
         ],
         urls: [

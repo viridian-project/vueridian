@@ -28,7 +28,7 @@
         <div>
           <a v-bind:href="entity.url">
             <img
-              v-bind:src="loadImg(entity.logo)"
+              v-bind:src="entity.logo"
               v-bind:alt="entity.name + ' Logo'"
               class="logo"
             />
@@ -78,8 +78,6 @@
 </style>
 
 <script>
-import fhandling from "@/assets/js/file-handling.js";
-
 import VoteWedges from "@/components/widgets/VoteWedges.vue";
 import HovercardScore from "@/components/widgets/HovercardScore.vue";
 
@@ -94,9 +92,6 @@ export default {
   components: {
     VoteWedges,
     HovercardScore
-  },
-  methods: {
-    loadImg: fhandling.loadImg
   }
 };
 </script>

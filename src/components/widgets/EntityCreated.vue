@@ -9,7 +9,7 @@
     </div>
     <div class="user-infos">
       <a :href="entity.createUserURL"
-        ><img class="avatar" :src="loadImg(entity.createUserAvatar)"
+        ><img class="avatar" :src="entity.createUserAvatar"
       /></a>
       <div class="user-details">
         <a :href="entity.createUserURL" class="user-name">{{
@@ -62,11 +62,7 @@
 </style>
 
 <script>
-import fhandling from "@/assets/js/file-handling.js";
 export default {
-  props: ["entity"],
-  methods: {
-    loadImg: fhandling.loadImg
-  }
+  props: ["entity"]
 };
 </script>

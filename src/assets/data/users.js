@@ -5,7 +5,7 @@ export default [
     reputation: 154,
     lastCommentAt: null,
     lastCommentDeletedAt: null,
-    avatarUrl: "avatars/openfoodfacts-contributors.png",
+    avatarUrl: "/img/avatars/openfoodfacts-contributors.png",
     publicEmail: null,
     bio: null
   },
@@ -15,7 +15,7 @@ export default [
     reputation: 12,
     lastCommentAt: null,
     lastCommentDeletedAt: null,
-    avatarUrl: "avatars/odoc.png",
+    avatarUrl: "/img/avatars/odoc.png",
     publicEmail: null,
     bio: null
   },
@@ -25,7 +25,7 @@ export default [
     reputation: 2,
     lastCommentAt: null,
     lastCommentDeletedAt: null,
-    avatarUrl: "avatars/zecourlis.png",
+    avatarUrl: "/img/avatars/zecourlis.png",
     publicEmail: null,
     bio: null
   },
@@ -35,7 +35,7 @@ export default [
     reputation: 2,
     lastCommentAt: null,
     lastCommentDeletedAt: null,
-    avatarUrl: "avatars/user8402819102.png",
+    avatarUrl: "/img/avatars/user8402819102.png",
     publicEmail: null,
     bio: null
   }
