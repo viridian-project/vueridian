@@ -19,34 +19,54 @@ export default [
     },
     locales: {
       de: {
-        name: "AnyCompany AG",
+        name: "AnyCompany GmbH",
         description: "",
-        address: "42 port road, Bristol, Großbritannien",
-        logoUrls: [
-          "/img/logos/AnyCompany_Logo.svg",
-          "https://upload.wikimedia.org/wikipedia/commons/9/92/AnyCompany_Logo.svg"
-        ],
+        address: "42 Port Road, Bristol, Großbritannien",
+        logoUrls: ["/img/logos/AnyCompany_Logo.svg"],
         urls: ["https://www.anycompany.co.uk/"]
       },
       en: {
-        name: "AnyCompany plc",
+        name: "AnyCompany Inc.",
         description: "",
-        address: "42 port road, Bristol, United Kingdom",
-        logoUrls: [
-          "/img/logos/AnyCompany_Logo.svg",
-          "https://upload.wikimedia.org/wikipedia/commons/9/92/AnyCompany_Logo.svg"
-        ],
+        address: "42 Port Road, Bristol, United Kingdom",
+        logoUrls: ["/img/logos/AnyCompany_Logo.svg"],
         urls: ["https://www.anycompany.co.uk/"]
       },
       fr: {
-        name: "AnyCompany SA",
+        name: "AnyCompany Sarl",
         description: "",
-        address: "42 port road, Bristol, Grande-Bretagne",
-        logoUrls: [
-          "/img/logos/AnyCompany_Logo.svg",
-          "https://upload.wikimedia.org/wikipedia/commons/9/92/AnyCompany_Logo.svg"
-        ],
+        address: "42 Port Road, Bristol, Grande-Bretagne",
+        logoUrls: ["/img/logos/AnyCompany_Logo.svg"],
         urls: ["https://www.anycompany.co.uk/"]
+      }
+    },
+    labels: []
+  },
+  {
+    id: "8396a807-4082-4e11-a003-7151f545d0c4",
+    createdBy: "openfoodfacts-contributors",
+    createdAt: "2019-08-22 14:38:39Z",
+    status: "ACTIVE",
+    updatedBy: "",
+    updatedAt: "",
+    supersedes: "",
+    supersededBy: "",
+    changeReason: "",
+    score: {
+      environment: 54,
+      climate: 11,
+      society: 49,
+      health: -5,
+      animalWelfare: 65,
+      economy: 6
+    },
+    locales: {
+      en: {
+        name: "Willow Organic Foods, Inc.",
+        description: "",
+        address: "12 Wills Road, Totnes, United Kingdom",
+        logoUrls: ["/img/logos/Willow_Organic_Foods_Logo.svg"],
+        urls: ["https://willoworganic.com"]
       }
     },
     labels: []
