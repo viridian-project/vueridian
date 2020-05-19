@@ -8,13 +8,30 @@
           src="@/assets/images/StellaOctangula_finished.svg"
         />
         <HelloWorld msg="Welcome to Your Vue.js App" />
+        <Modal
+          wrapperClass="center-modal-wrapper"
+          v-model="showModal"
+          title="My first modal"
+        >
+          <p>Modal content goes here...</p>
+        </Modal>
       </div>
     </div>
     <Footer />
   </div>
 </template>
 
+<style scoped>
+.center-modal-wrapper {
+  display: flex;
+  align-items: center;
+}
+</style>
+
 <script>
+import VueModal from "@kouts/vue-modal";
+import "@kouts/vue-modal/dist/vue-modal.css";
+
 // @ is an alias to /src
 import HeaderHome from "@/components/headers/HeaderHome.vue";
 import HelloWorld from "@/components/HelloWorld.vue";
@@ -23,9 +40,15 @@ import Footer from "@/components/Footer.vue";
 export default {
   name: "Home",
   components: {
+    Modal: VueModal,
     HeaderHome,
     HelloWorld,
     Footer
+  },
+  data: function() {
+    return {
+      showModal: true
+    };
   }
 };
 </script>
