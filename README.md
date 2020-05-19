@@ -85,7 +85,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Add more dependencies
 
-For tour guide:
+For tour guide: (https://kamranahmed.info/driver.js/#)
 ```
 npm install driver.js
+```
+
+For modal: (https://kouts.github.io/vue-modal/demo/installation/)
+```
+npm i @kouts/vue-modal --save
 ```
