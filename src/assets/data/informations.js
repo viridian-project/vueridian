@@ -78,7 +78,7 @@ export default [
     target: "product-8fe77cbb-dddb-486a-b4a6-5680daa839d3", // GreenLine Organic Chocolate Spread
     locales: {
       en: {
-        title: "Cointains unsustainable plastic lid",
+        title: "Contains unsustainable plastic lid",
         description:
           "I bought this spread recently and was very dissapointed that the lid as well as the jar is completely made from plastic and can not be reused. Glas should be standard, I think. Even better would be a returnable, reusable container. Please change this in future!"
       }

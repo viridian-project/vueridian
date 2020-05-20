@@ -77,7 +77,9 @@
                     <ul>
                       <li v-for="source in info.sources" :key="source.id">
                         <span
-                          v-if="'authors' in source && source.authors.length > 0"
+                          v-if="
+                            'authors' in source && source.authors.length > 0
+                          "
                         >
                           <a :href="source.url">{{ source.title }}</a
                           >, ({{ source.authors.join(", ") }}) –
@@ -85,7 +87,8 @@
                         <span v-else>
                           <a :href="source.url">{{ source.title }}</a> –
                         </span>
-                        accessed <span class="date">{{ source.accessDate }}</span>
+                        accessed
+                        <span class="date">{{ source.accessDate }}</span>
                       </li>
                     </ul>
                   </div>
