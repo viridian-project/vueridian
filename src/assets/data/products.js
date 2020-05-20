@@ -1,4 +1,5 @@
-export default [{
+export default [
+  {
     docType: "product",
     id: "418ff85c-ae31-448f-aebd-d77dd966a514",
     createdBy: "zecourlis",
@@ -26,9 +27,11 @@ export default [{
         name: "The REAL Chocolate Crunchy Cream",
         price: "4.99",
         currency: "EUR",
-        description: "Spread made from instant cocoa drink powder with added vitamins",
+        description:
+          "Spread made from instant cocoa drink powder with added vitamins",
         quantities: ["400 g"],
-        ingredients: "33% instant cocoa drink powder with added vitamins (sugar, cocoa powder, milk powder, vitamins (A, E, B1, B2, C), vanilla extract, salt), sugar, vegetable oil (colza, palm), low fat cocoa, emulgator sun flower lecithin, vanillin.",
+        ingredients:
+          "33% instant cocoa drink powder with added vitamins (sugar, cocoa powder, milk powder, vitamins (A, E, B1, B2, C), vanilla extract, salt), sugar, vegetable oil (colza, palm), low fat cocoa, emulgator sun flower lecithin, vanillin.",
         packagings: ["glass", "plastic"],
         categories: ["Spread", "Breakfast", "Chocolate cream"],
         imageUrls: ["/img/photos/crumpy_mod-140420_1.png"],
@@ -66,7 +69,8 @@ export default [{
         currency: "EUR",
         description: "Organic chocolate spread containing genuine vanilla",
         quantities: ["400 g"],
-        ingredients: "33% instant cocoa drink powder with added vitamins (sugar, cocoa powder, milk powder, vitamins (A, E, B1, B2, C), vanilla extract, salt), sugar, vegetable oil (colza, palm), low fat cocoa, emulgator sun flower lecithin, vanillin.",
+        ingredients:
+          "33% instant cocoa drink powder with added vitamins (sugar, cocoa powder, milk powder, vitamins (A, E, B1, B2, C), vanilla extract, salt), sugar, vegetable oil (colza, palm), low fat cocoa, emulgator sun flower lecithin, vanillin.",
         packagings: ["glass"],
         categories: ["Spread", "Breakfast", "Chocolate cream"],
         imageUrls: ["/img/photos/crumpy_mod-160420_2.2.png"],
@@ -108,7 +112,8 @@ export default [{
         currency: "EUR",
         description: "Organic chocolate spread, palm oil free",
         quantities: ["300 g"],
-        ingredients: "33% raw cocoa powder, vegetable oil (colza, coconut), sugar, vanilla extract, salt, emulgator sun flower lecithin.",
+        ingredients:
+          "33% raw cocoa powder, vegetable oil (colza, coconut), sugar, vanilla extract, salt, emulgator sun flower lecithin.",
         packagings: ["glass", "metal"],
         categories: ["Spread", "Breakfast", "Chocolate cream"],
         imageUrls: ["images/Willow_organic_creamy_chocolate_spread.jpg"],
@@ -149,9 +154,11 @@ export default [{
         name: "Willow organic vegan super chocolate spread",
         price: "5.99",
         currency: "EUR",
-        description: "Organic vegan chocolate spread with coconut palm sugar, palm oil free",
+        description:
+          "Organic vegan chocolate spread with coconut palm sugar, palm oil free",
         quantities: ["300 g"],
-        ingredients: "33% raw cocoa powder, vegetable oil (colza, coconut), coconut palm sugar, vanilla extract, salt, emulgator sun flower lecithin.",
+        ingredients:
+          "33% raw cocoa powder, vegetable oil (colza, coconut), coconut palm sugar, vanilla extract, salt, emulgator sun flower lecithin.",
         packagings: ["glass", "metal"],
         categories: ["Spread", "Breakfast", "Chocolate cream"],
         imageUrls: ["images/Willow_organic_vegan_super_chocolate_spread.jpg"],

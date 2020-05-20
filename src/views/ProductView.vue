@@ -38,10 +38,10 @@
           <EntityCreated :entity="prod" />
         </div>
       </section>
-      <section id="detail-comments">
+      <section id="detail-comments" v-if="commentsAll.length > 0">
         <div class="detail-box">
           <h2>General comments on the product:</h2>
-          <Comments :comments="comments" />
+          <Comments :comments="commentsPref" />
           <div v-if="commentsUnpref.length > 0">
             <h3>Comments in other languages:</h3>
             <Comments :comments="commentsUnpref" />
@@ -107,7 +107,7 @@
               <div class="info-comments">
                 <h4>Comments:</h4>
                 <Comments
-                  :comments="info.comments"
+                  :comments="info.commentsPref"
                   class="info-comment-container"
                 />
                 <div v-if="info.commentsUnpref.length > 0">
@@ -282,22 +282,14 @@ export default {
     ScoreTable,
     Footer
   },
-  data: function() {
-    return {
-      id: this.$route.params.id
-    };
-  },
   computed: {
+    id: function() {
+      return this.$route.params.id;
+    },
     product: function() {
       /* This would be a DB query for the product in reality: */
-      let index = -1;
-      for (let i = 0; index < 0 && i < productSearchResults.length; i++) {
-        if (productSearchResults[i].id === this.id) {
-          index = i;
-          break;
-        }
-      }
-      return productSearchResults[index];
+      let prod = productSearchResults.filter(p => p.id === this.id)[0];
+      return prod;
     },
     score: function() {
       return scolor.calcTotalScore(
@@ -326,14 +318,7 @@ export default {
         preferences
       );
       /* This would be a DB query for the user info in reality: */
-      let index = -1;
-      for (let i = 0; index < 0 && i < users.length; i++) {
-        if (users[i].name === this.product.createdBy) {
-          index = i;
-          break;
-        }
-      }
-      let user = users[index];
+      let user = users.filter(u => u.name === this.product.createdBy)[0];
       return {
         name: prefLocale.name,
         desc: prefLocale.description,
@@ -370,8 +355,12 @@ export default {
     productCategories: () => [],
     containedProducts: () => [],
     producers: function() {
+      /* This would be a DB query for the producers in reality: */
+      let myProducers = producers.filter(
+        p => this.product.producers.indexOf(p.id) >= 0
+      );
       let prdcrs = [];
-      for (let producer of producers) {
+      for (let producer of myProducers) {
         let prefLocale = scolor.preferredLocaleOfEntity(producer, preferences);
         let score = scolor.calcTotalScore(
           producer.score,
@@ -409,8 +398,10 @@ export default {
       return prdcrs;
     },
     labels: function() {
+      /* This would be a DB query for the labels in reality: */
+      let myLabels = labels.filter(l => this.product.labels.indexOf(l.id) >= 0);
       let labs = [];
-      for (let lab of labels) {
+      for (let lab of myLabels) {
         let prefLocale = scolor.preferredLocaleOfEntity(lab, preferences);
         let score = scolor.calcTotalScore(
           lab.score,
@@ -447,10 +438,17 @@ export default {
       }
       return labs;
     },
-    comments: function() {
+    commentsAll: function() {
+      /* This would be a DB query for the comments in reality: */
+      let allComments = commentsProduct.filter(
+        comment => comment.target === "product-" + this.id
+      );
+      return allComments;
+    },
+    commentsPref: function() {
       /* INFO: This code may be unnecessary if we perform DB queries that do the selection and sorting for us */
       /* Show comments in one of the user's preferred languages first: */
-      let prefComments = commentsProduct.filter(
+      let prefComments = this.commentsAll.filter(
         comment => preferences.preferredLanguages.indexOf(comment.lang) >= 0
       ); // comments in preferred languages
       /* Sort comments by weight in descending order: */
@@ -465,7 +463,7 @@ export default {
     commentsUnpref: function() {
       /* INFO: This code may be unnecessary if we perform DB queries that do the selection and sorting for us */
       /* Show comments in languages not preferred by user second: */
-      let unprefComments = commentsProduct.filter(
+      let unprefComments = this.commentsAll.filter(
         comment => preferences.preferredLanguages.indexOf(comment.lang) < 0
       ); // comments in "unpreferred" languages
       /* Sort comments by weight in descending order: */
@@ -478,12 +476,16 @@ export default {
       );
     },
     informations: function() {
+      /* This would be a DB query for the informations in reality: */
+      let myInformations = informations.filter(
+        i => i.target === "product-" + this.id
+      );
       let infos = [];
-      for (let info of informations) {
+      for (let info of myInformations) {
         /* Fetch the preferred locale */
         let prefLocale = scolor.preferredLocaleOfEntity(info, preferences);
         let sources = [];
-        if ('sources' in info) {
+        if ("sources" in info) {
           for (let source of info.sources) {
             let accessDate = new Date(source.accessDate);
             let accessDateInLocale = new Intl.DateTimeFormat(
@@ -514,22 +516,22 @@ export default {
           let rating = myRatings[0];
           infoRating = scolor.prepareRating(rating);
         }
+        /* This would be a DB query for the comments in reality: */
+        let allComments = commentsInformations.filter(
+          comment => comment.target === "information-" + info.id
+        );
         /* INFO: This code may be unnecessary if we perform DB queries that do the selection and sorting for us */
         /* Show comments belonging to this information in one of the user's preferred languages first: */
-        let prefComments = commentsInformations.filter(
-          comment =>
-            comment.target === "information-" + info.id &&
-            preferences.preferredLanguages.indexOf(comment.lang) >= 0
-        ); // comments in unpreferred languages
-        let unprefComments = commentsInformations.filter(
-          comment =>
-            comment.target === "information-" + info.id &&
-            preferences.preferredLanguages.indexOf(comment.lang) < 0
+        let prefComments = allComments.filter(
+          comment => preferences.preferredLanguages.indexOf(comment.lang) >= 0
+        ); // comments in preferred languages
+        let unprefComments = allComments.filter(
+          comment => preferences.preferredLanguages.indexOf(comment.lang) < 0
         ); // comments in "unpreferred" languages
         /* Sort comments by weight in descending order: */
         prefComments.sort((a, b) => b.weight - a.weight);
         unprefComments.sort((a, b) => b.weight - a.weight);
-        let infoComments = scolor.prepareComments(
+        let infoCommentsPref = scolor.prepareComments(
           prefComments,
           ratings,
           preferences,
@@ -547,14 +549,7 @@ export default {
           datetimeOptions
         ).format(createDate);
         /* This would be a DB query for the user info in reality: */
-        let index = -1;
-        for (let i = 0; index < 0 && i < users.length; i++) {
-          if (users[i].name === info.createdBy) {
-            index = i;
-            break;
-          }
-        }
-        let user = users[index];
+        let user = users.filter(u => u.name === info.createdBy)[0];
         infos.push({
           id: info.id,
           badgeClass: badgeClass,
@@ -572,7 +567,7 @@ export default {
           createUserReputation: user.reputation,
           createUserURL: "/user/" + info.createdBy,
           rating: infoRating,
-          comments: infoComments,
+          commentsPref: infoCommentsPref,
           commentsUnpref: infoCommentsUnpref
         });
       }
