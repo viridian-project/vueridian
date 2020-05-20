@@ -71,22 +71,24 @@
               </div>
               <div class="info-sources-and-users">
                 <div class="info-sources">
-                  <strong v-if="info.sources.length > 1">Sources:</strong>
-                  <strong v-else>Source:</strong>
-                  <ul>
-                    <li v-for="source in info.sources" :key="source.id">
-                      <span
-                        v-if="'authors' in source && source.authors.length > 0"
-                      >
-                        <a :href="source.url">{{ source.title }}</a
-                        >, ({{ source.authors.join(", ") }}) –
-                      </span>
-                      <span v-else>
-                        <a :href="source.url">{{ source.title }}</a> –
-                      </span>
-                      accessed <span class="date">{{ source.accessDate }}</span>
-                    </li>
-                  </ul>
+                  <div v-if="info.sources.length > 0">
+                    <strong v-if="info.sources.length > 1">Sources:</strong>
+                    <strong v-else>Source:</strong>
+                    <ul>
+                      <li v-for="source in info.sources" :key="source.id">
+                        <span
+                          v-if="'authors' in source && source.authors.length > 0"
+                        >
+                          <a :href="source.url">{{ source.title }}</a
+                          >, ({{ source.authors.join(", ") }}) –
+                        </span>
+                        <span v-else>
+                          <a :href="source.url">{{ source.title }}</a> –
+                        </span>
+                        accessed <span class="date">{{ source.accessDate }}</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <div class="info-users">
                   <EntityCreated :entity="info" />
