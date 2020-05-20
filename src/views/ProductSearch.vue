@@ -9,7 +9,7 @@
         <article v-for="prod in products" :key="prod.id">
           <div class="card-img">
             <router-link :to="prod.url">
-              <img v-bind:style="prod.imgStyle" />
+              <div v-bind:style="prod.imgStyle"></div>
             </router-link>
           </div>
           <div class="card-header">
