@@ -483,18 +483,20 @@ export default {
         /* Fetch the preferred locale */
         let prefLocale = scolor.preferredLocaleOfEntity(info, preferences);
         let sources = [];
-        for (let source of info.sources) {
-          let accessDate = new Date(source.accessDate);
-          let accessDateInLocale = new Intl.DateTimeFormat(
-            preferences.locale,
-            dateOptions
-          ).format(accessDate);
-          sources.push({
-            title: source.title,
-            authors: source.authors,
-            url: source.url,
-            accessDate: accessDateInLocale
-          });
+        if ('sources' in info) {
+          for (let source of info.sources) {
+            let accessDate = new Date(source.accessDate);
+            let accessDateInLocale = new Intl.DateTimeFormat(
+              preferences.locale,
+              dateOptions
+            ).format(accessDate);
+            sources.push({
+              title: source.title,
+              authors: source.authors,
+              url: source.url,
+              accessDate: accessDateInLocale
+            });
+          }
         }
         let badgeClass = "";
         let badgeLabel = "";
