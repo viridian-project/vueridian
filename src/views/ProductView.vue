@@ -66,7 +66,7 @@
                       >{{ info.badgeLabel }}</span
                     >
                   </h3>
-                  <p>{{ info.description }}</p>
+                  <p v-html="info.description"></p>
                 </div>
               </div>
               <div class="info-sources-and-users">
@@ -103,19 +103,23 @@
                   </div>
                 </div>
               </div>
-              <div class="separator"></div>
-              <div class="info-comments">
-                <h4>Comments:</h4>
-                <Comments
-                  :comments="info.commentsPref"
-                  class="info-comment-container"
-                />
-                <div v-if="info.commentsUnpref.length > 0">
-                  <h4>Comments in other languages:</h4>
+              <div
+                v-if="info.commentsPref.length + info.commentsUnpref.length > 0"
+              >
+                <div class="separator"></div>
+                <div class="info-comments">
+                  <h4>Comments:</h4>
                   <Comments
-                    :comments="info.commentsUnpref"
+                    :comments="info.commentsPref"
                     class="info-comment-container"
                   />
+                  <div v-if="info.commentsUnpref.length > 0">
+                    <h4>Comments in other languages:</h4>
+                    <Comments
+                      :comments="info.commentsUnpref"
+                      class="info-comment-container"
+                    />
+                  </div>
                 </div>
               </div>
             </article>

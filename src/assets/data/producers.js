@@ -62,7 +62,7 @@ export default [
     },
     locales: {
       en: {
-        name: "Willow Organic Foods, Inc.",
+        name: "Willow Organic Food, Inc.",
         description: "",
         address: "12 Wills Road, Totnes, United Kingdom",
         logoUrls: ["/img/logos/Willow_Organic_Foods_Logo.svg"],

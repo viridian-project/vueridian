@@ -30,13 +30,18 @@
 
 .info-vote-and-text {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 8px;
   margin-bottom: 8px;
 }
 
 .info-vote-and-text h3 {
-  margin-top: 6px;
-  margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.info-vote-and-text p {
+  margin-top: 0;
 }
 
 .info-sources-and-users {
@@ -73,6 +78,7 @@
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
+  white-space: nowrap;
   padding: 2px 6px;
   border-radius: 5px;
   vertical-align: super;

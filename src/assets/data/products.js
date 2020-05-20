@@ -64,7 +64,7 @@ export default [
     labels: ["e867d2ff-940b-4ee0-b063-11c0812b87a6"], // EU organic
     locales: {
       en: {
-        name: "GreenLine Organic Chocolate Spread",
+        name: "The REAL Chocolate GreenLine Organic Chocolate Spread",
         price: "5.99",
         currency: "EUR",
         description: "Organic chocolate spread containing genuine vanilla",
@@ -98,7 +98,7 @@ export default [
       economy: 35
     },
     gtin: "7142985939201",
-    producers: ["8396a807-4082-4e11-a003-7151f545d0c4"], // Willow Organic Foods, Inc.
+    producers: ["8396a807-4082-4e11-a003-7151f545d0c4"], // Willow Organic Food, Inc.
     containedProducts: [],
     labels: [
       "e867d2ff-940b-4ee0-b063-11c0812b87a6", // EU organic
@@ -107,7 +107,7 @@ export default [
     ],
     locales: {
       en: {
-        name: "Willow organic creamy chocolate spread",
+        name: "Willow Organic Creamy Chocolate Spread",
         price: "5.99",
         currency: "EUR",
         description: "Organic chocolate spread, palm oil free",
@@ -141,7 +141,7 @@ export default [
       economy: 35
     },
     gtin: "7998292838391",
-    producers: ["8396a807-4082-4e11-a003-7151f545d0c4"], // Willow Organic Foods, Inc.
+    producers: ["8396a807-4082-4e11-a003-7151f545d0c4"], // Willow Organic Food, Inc.
     containedProducts: [],
     labels: [
       "e867d2ff-940b-4ee0-b063-11c0812b87a6", // EU organic
@@ -151,7 +151,7 @@ export default [
     ],
     locales: {
       en: {
-        name: "Willow organic vegan super chocolate spread",
+        name: "Willow Organic Vegan Super Chocolate Spread",
         price: "5.99",
         currency: "EUR",
         description:

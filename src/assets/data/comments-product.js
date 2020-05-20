@@ -52,7 +52,7 @@ export default [
     text:
       "This spread is just perfect: super yummy, super creamy and you can keep your clear conscience without making compromises",
     flag: {},
-    target: "product-1433eb64-58c5-4fa3-93cb-c46f132dfca6", // Willow organic creamy chocolate spread
+    target: "product-1433eb64-58c5-4fa3-93cb-c46f132dfca6", // Willow Organic Creamy Chocolate Spread
     weight: 8
   },
   {
@@ -66,7 +66,7 @@ export default [
     text:
       "Many vegan chocolate products are not that creamy and sweet as I would like them to be. But this is really great in taste and it is organic and fair as well. Just perfect!",
     flag: {},
-    target: "product-1433eb64-58c5-4fa3-93cb-c46f132dfca6", // Willow organic creamy chocolate spread
+    target: "product-1433eb64-58c5-4fa3-93cb-c46f132dfca6", // Willow Organic Creamy Chocolate Spread
     weight: 6
   }
   // {

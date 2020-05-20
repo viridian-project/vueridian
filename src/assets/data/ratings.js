@@ -68,7 +68,7 @@ export default [
   },
   {
     id: "73366958-3074-4e28-a559-62020e6f31c3",
-    target: "product-1433eb64-58c5-4fa3-93cb-c46f132dfca6", // Willow organic creamy chocolate spread
+    target: "product-1433eb64-58c5-4fa3-93cb-c46f132dfca6", // Willow Organic Creamy Chocolate Spread
     infoTarget: "information-256a7781-78e5-4b1d-8c2d-84c24e8ad55d", // ElisabethKent2015
     score: {
       society: 80,
@@ -79,7 +79,7 @@ export default [
   },
   {
     id: "1398cc99-5600-4275-affa-381548f840f3",
-    target: "product-1433eb64-58c5-4fa3-93cb-c46f132dfca6", // Willow organic creamy chocolate spread
+    target: "product-1433eb64-58c5-4fa3-93cb-c46f132dfca6", // Willow Organic Creamy Chocolate Spread
     infoTarget: "information-99e1e89e-99f0-4c3c-b3b4-f80f83bad5a9", // mr-organic
     score: {
       environment: 95,
@@ -92,7 +92,7 @@ export default [
   },
   {
     id: "f6ac9167-3489-4e24-a2f9-438599d2327e",
-    target: "product-e01f907e-60f4-4ef8-9fa2-92b36508ebde", // Willow organic vegan super chocolate spread
+    target: "product-e01f907e-60f4-4ef8-9fa2-92b36508ebde", // Willow Organic Vegan Super Chocolate Spread
     infoTarget: "information-b6d0738d-decf-4472-b63a-aa63fc9284f8", // londonveganista
     score: {
       environment: 85,
@@ -104,7 +104,7 @@ export default [
   },
   {
     id: "e5cc3e1a-4cdd-4ebf-910d-228571214fa0",
-    target: "product-e01f907e-60f4-4ef8-9fa2-92b36508ebde", // Willow organic vegan super chocolate spread
+    target: "product-e01f907e-60f4-4ef8-9fa2-92b36508ebde", // Willow Organic Vegan Super Chocolate Spread
     infoTarget: "ratingcomment-3089f900-c61f-47fc-b7b0-082f16b2e517", // sarah32
     score: {
       environment: 70,

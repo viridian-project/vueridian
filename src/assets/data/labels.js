@@ -133,7 +133,7 @@ export default [
     },
     locales: {
       de: {
-        name: "Bio (EU)",
+        name: "EU-Bio-Siegel",
         description:
           "Bio-Siegel der Europäischen Union: Die „Verordnung (EG) Nr. 834/2007 des Rates vom 28. Juni 2007 über die ökologische/biologische Produktion und die Kennzeichnung von ökologischen/biologischen Erzeugnissen“ (Europäische Öko-Verordnung oder EG-Öko-Verordnung) definiert, wie Erzeugnisse und Lebensmittel, die als Öko-Produkte gekennzeichnet sind, erzeugt und hergestellt werden müssen.",
         categories: ["Lebensmittel"],
@@ -148,7 +148,7 @@ export default [
         ]
       },
       en: {
-        name: "Organic (EU)",
+        name: "EU Organic Label",
         description:
           "EU certified organic food label: The European Union regulation (EEC) No. 2092/91 of the European Council of 24 June 1991 on organic production of agricultural products and indications referring thereto on agricultural products and foodstuffs (EU-Eco-regulation) defines how agricultural products and foods that are designated as ecological products have to be grown.",
         categories: ["Food"],

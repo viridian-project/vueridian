@@ -16,7 +16,7 @@ export default [
       en: {
         title: "Palm oil production is a massive climate killer",
         description:
-          "To grow palm oil, vast areas of (often primordial) rainforest are destroyed to make place for plantations with 100% oil palm monocultures. To clear the land quickly, the forest is often burned down, releasing a lot of carbon dioxide and particulates affecting the health of the residents – sometimes even hundreds of kilometres away! Furthermore, the soil is very moist and contains a lot of peat, so it is drained before the plantations are set up. Peat is one of the most effective carbon dioxide stores, as long as it is wet. So, as soon as the forest is cleared and the plantationsa are established, the soil emits hughe quantities of carbon dioxide. Indonesia and Malaysia are the two biggest growers and exporters of palm oil worldwide and the depicted practices are the reason why they, but especially Indonesia, rank very high in the list of the world‘s biggest CO2-emitters. Indonesia even made it to the top ten!<br>Besides this, the vast plantations also contribute massively to the degradation of forest, the reduction of biodiversity, is endangering the survival of vulnerable animal species such as orang utans, profits from land grabbing, expropriation of local communities, especially indigenous and traditional communities, makes use of forced labour and exploitation of migrant workers, especiall women.<br>Therefore, our current way to grow and produce palm oil is absolutely negative to nearly all categories that can be rated here, and since this spread contains a big amount of palm oil of very uncertain origin, we give this product a very negative rating. This company could do a lot better to produce a less harmful product!"
+          "To grow palm oil, vast areas of (often primordial) rainforest are destroyed to make place for plantations with 100% oil palm monocultures. To clear the land quickly, the forest is often burned down, releasing a lot of carbon dioxide and particulates affecting the health of the residents – sometimes even hundreds of kilometres away! Furthermore, the soil is very moist and contains a lot of peat, so it is drained before the plantations are set up. Peat is one of the most effective carbon dioxide stores, as long as it is wet. So, as soon as the forest is cleared and the plantationsa are established, the soil emits huge quantities of carbon dioxide. Indonesia and Malaysia are the two biggest growers and exporters of palm oil worldwide and the depicted practices are the reason why they, but especially Indonesia, rank very high in the list of the world‘s biggest CO<sub>2</sub>-emitters. Indonesia even made it to the top ten!<br><br>Besides this, the vast plantations also contribute massively to the degradation of forest, the reduction of biodiversity, is endangering the survival of vulnerable animal species such as orang utans, profits from land grabbing, expropriation of local communities, especially indigenous and traditional communities, makes use of forced labour and exploitation of migrant workers, especiall women.<br><br>Therefore, our current way to grow and produce palm oil is absolutely negative to nearly all categories that can be rated here, and since this spread contains a big amount of palm oil of very uncertain origin, we give this product a very negative rating. This company could do a lot better to produce a less harmful product!"
       }
     },
     sources: [
@@ -98,7 +98,7 @@ export default [
     supersededBy: "",
     changeReason: "",
     category: "CORPORATE_SOCIAL_RESPONSIBILITY",
-    target: "product-1433eb64-58c5-4fa3-93cb-c46f132dfca6", // Willow organic creamy chocolate spread
+    target: "product-1433eb64-58c5-4fa3-93cb-c46f132dfca6", // Willow Organic Creamy Chocolate Spread
     locales: {
       en: {
         title: "Fair trade for south and north",
@@ -111,7 +111,7 @@ export default [
         url: "https://willoworganic.com/responsibility/dairy-products.htm",
         accessDate: "2020-01-29",
         title: "People and Animals Deserve Fair Trade and Production",
-        authors: ["Willow Organic Foods Inc."]
+        authors: ["Willow Organic Food Inc."]
       }
     ],
     weight: 8,
@@ -129,7 +129,7 @@ export default [
     supersededBy: "",
     changeReason: "",
     category: "MEDIA",
-    target: "product-1433eb64-58c5-4fa3-93cb-c46f132dfca6", // Willow organic creamy chocolate spread
+    target: "product-1433eb64-58c5-4fa3-93cb-c46f132dfca6", // Willow Organic Creamy Chocolate Spread
     locales: {
       en: {
         title: "Much more than just „organic“ and „fair“",
@@ -162,7 +162,7 @@ export default [
     supersededBy: "",
     changeReason: "",
     category: "EXTERNAL_COSTS",
-    target: "product-e01f907e-60f4-4ef8-9fa2-92b36508ebde", // Willow organic vegan super chocolate spread
+    target: "product-e01f907e-60f4-4ef8-9fa2-92b36508ebde", // Willow Organic Vegan Super Chocolate Spread
     locales: {
       en: {
         title: "Vegan products have the smallest footprint and climate impact",

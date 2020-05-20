@@ -1,5 +1,5 @@
 export default {
-  preferredLanguages: ["de", "en"],
+  preferredLanguages: ["en", "de"],
   locale: undefined,
   // locale: 'en-US',
   // locale: 'de-DE',
