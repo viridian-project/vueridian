@@ -2,12 +2,9 @@
 * Infos          *
 *****************/
 
-.info-comment-container>div {
-  background-color: lightgray;
-}
-
 #detail-info-container>article {
   padding: 16px;
+  margin-bottom: 16px;
 }
 
 #detail-info-container>article:nth-child(odd) {
@@ -50,6 +47,7 @@
 
 .info-sources {
   width: 70%;
+  padding-right: 8px;
 }
 
 .info-users {

@@ -1,7 +1,7 @@
 <template>
-  <div class="comments-container">
+  <div>
     <div
-      v-for="comment in comments"
+      v-for="(comment, index) in comments"
       :key="comment.id"
       :class="{ negative: comment.voteBalance < 0 }"
     >
@@ -34,6 +34,10 @@
           </div>
         </div>
       </div>
+      <div
+        v-if="indented && index + 1 < comments.length"
+        class="separator"
+      ></div>
     </div>
   </div>
 </template>
@@ -41,11 +45,11 @@
 <style src="@/assets/css/comments-ratings.css"></style>
 
 <style scoped>
-.comments-container > div:nth-child(odd) {
+.large-comments-container > div:nth-child(odd) {
   background-color: whitesmoke;
 }
 
-.comments-container > div:nth-child(even) {
+.large-comments-container > div:nth-child(even) {
   background-color: lavender;
 }
 
@@ -59,7 +63,13 @@ import VoteWedges from "@/components/widgets/VoteWedges.vue";
 import ScoreTable from "@/components/widgets/ScoreTable.vue";
 
 export default {
-  props: ["comments"],
+  props: {
+    comments: {},
+    indented: {
+      default: false,
+      type: Boolean
+    }
+  },
   components: {
     VoteWedges,
     ScoreTable

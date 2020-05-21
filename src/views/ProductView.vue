@@ -41,10 +41,13 @@
       <section id="detail-comments" v-if="commentsAll.length > 0">
         <div class="detail-box">
           <h2>General comments on the product:</h2>
-          <Comments :comments="commentsPref" />
+          <Comments :comments="commentsPref" class="large-comments-container" />
           <div v-if="commentsUnpref.length > 0">
             <h3>Comments in other languages:</h3>
-            <Comments :comments="commentsUnpref" />
+            <Comments
+              :comments="commentsUnpref"
+              class="large-comments-container"
+            />
           </div>
         </div>
       </section>
@@ -114,15 +117,12 @@
                 <div class="separator"></div>
                 <div class="info-comments">
                   <h4>Comments:</h4>
-                  <Comments
-                    :comments="info.commentsPref"
-                    class="info-comment-container"
-                  />
+                  <Comments :comments="info.commentsPref" :indented="true" />
                   <div v-if="info.commentsUnpref.length > 0">
                     <h4>Comments in other languages:</h4>
                     <Comments
                       :comments="info.commentsUnpref"
-                      class="info-comment-container"
+                      :indented="true"
                     />
                   </div>
                 </div>

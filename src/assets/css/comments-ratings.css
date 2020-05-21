@@ -25,7 +25,23 @@
 
 .info-ratings,
 .info-comments {
-  margin-left: 32px;
+  margin-left: 16px;
+  padding-left: 16px;
+}
+
+.info-comments {
+  border-left: 2px solid #c1c1c1;
+}
+
+.info-comments>div {
+  /* Slightly smaller font size for indented comments that refer to an information: */
+  font-size: 0.9em;
+}
+
+.info-comments .comment {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
 }
 
 .rating {
@@ -47,4 +63,8 @@
 
 .column>p {
   margin-top: 0;
+}
+
+.info-comments .column>p {
+  margin-bottom: 0;
 }

@@ -6,7 +6,6 @@ export default [
   //   createdAt: "2017-08-01 08:19:42Z",
   //   status: "ACTIVE",
   //   lang: "en",
-  //   title: "bad, but without alternatives",
   //   text:
   //     "The alternatives to palm oil (e.g. coconut oil) aren't better either, because the need even more space to be grown. Saturated fat, on the other hand, are bad for health. Thus I think, the rating is too strict.",
   //   flag: {},
