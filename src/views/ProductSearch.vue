@@ -144,7 +144,6 @@ if (maxPriceLength > 9) {
 } else if (maxPriceLength > 7) {
   document.getElementById("cards").classList.add("price-8-chars");
 }
-console.log(products);
 
 export default {
   name: "ProductsSearch",
