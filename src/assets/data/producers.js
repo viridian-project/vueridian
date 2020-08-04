@@ -22,21 +22,21 @@ export default [
         name: "AnyCompany GmbH",
         description: "",
         address: "42 Port Road, Bristol, Großbritannien",
-        logoUrls: ["/img/logos/AnyCompany_Logo.svg"],
+        logoUrls: ["/mockup/img/logos/AnyCompany_Logo.svg"],
         urls: ["https://www.anycompany.co.uk/"]
       },
       en: {
         name: "AnyCompany Inc.",
         description: "",
         address: "42 Port Road, Bristol, United Kingdom",
-        logoUrls: ["/img/logos/AnyCompany_Logo.svg"],
+        logoUrls: ["/mockup/img/logos/AnyCompany_Logo.svg"],
         urls: ["https://www.anycompany.co.uk/"]
       },
       fr: {
         name: "AnyCompany Sarl",
         description: "",
         address: "42 Port Road, Bristol, Grande-Bretagne",
-        logoUrls: ["/img/logos/AnyCompany_Logo.svg"],
+        logoUrls: ["/mockup/img/logos/AnyCompany_Logo.svg"],
         urls: ["https://www.anycompany.co.uk/"]
       }
     },
@@ -65,7 +65,7 @@ export default [
         name: "Willow Organic Food, Inc.",
         description: "",
         address: "12 Wills Road, Totnes, United Kingdom",
-        logoUrls: ["/img/logos/Willow_Organic_Foods_Logo.svg"],
+        logoUrls: ["/mockup/img/logos/Willow_Organic_Foods_Logo.svg"],
         urls: ["https://willoworganic.com"]
       }
     },

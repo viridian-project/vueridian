@@ -34,7 +34,7 @@ export default [
           "33% instant cocoa drink powder with added vitamins (sugar, cocoa powder, milk powder, vitamins (A, E, B1, B2, C), vanilla extract, salt), sugar, vegetable oil (colza, palm), low fat cocoa, emulgator sun flower lecithin, vanillin.",
         packagings: ["glass", "plastic"],
         categories: ["Spread", "Breakfast", "Chocolate cream"],
-        imageUrls: ["/img/photos/crumpy_mod-140420_1.png"],
+        imageUrls: ["/mockup/img/photos/crumpy_mod-140420_1.png"],
         urls: ["http://www.therealcream.com/"]
       }
     }
@@ -73,7 +73,7 @@ export default [
           "33% instant cocoa drink powder with added vitamins (sugar, cocoa powder, milk powder, vitamins (A, E, B1, B2, C), vanilla extract, salt), sugar, vegetable oil (colza, palm), low fat cocoa, emulgator sun flower lecithin, vanillin.",
         packagings: ["glass"],
         categories: ["Spread", "Breakfast", "Chocolate cream"],
-        imageUrls: ["/img/photos/crumpy_mod-160420_2.2.png"],
+        imageUrls: ["/mockup/img/photos/crumpy_mod-160420_2.2.png"],
         urls: ["http://www.greenline-organic.com/chocolate-spread/"]
       }
     }
@@ -116,7 +116,9 @@ export default [
           "33% raw cocoa powder, vegetable oil (colza, coconut), sugar, vanilla extract, salt, emulgator sun flower lecithin.",
         packagings: ["glass", "metal"],
         categories: ["Spread", "Breakfast", "Chocolate cream"],
-        imageUrls: ["images/Willow_organic_creamy_chocolate_spread.jpg"],
+        imageUrls: [
+          "/mockup/img/photos/Willow_organic_creamy_chocolate_spread.jpg"
+        ],
         urls: ["https://willoworganic.com/products/creamy/"]
       }
     }
@@ -161,7 +163,9 @@ export default [
           "33% raw cocoa powder, vegetable oil (colza, coconut), coconut palm sugar, vanilla extract, salt, emulgator sun flower lecithin.",
         packagings: ["glass", "metal"],
         categories: ["Spread", "Breakfast", "Chocolate cream"],
-        imageUrls: ["images/Willow_organic_vegan_super_chocolate_spread.jpg"],
+        imageUrls: [
+          "/mockup/img/photos/Willow_organic_vegan_super_chocolate_spread.jpg"
+        ],
         urls: ["https://willoworganic.com/products/vegan/"]
       }
     }

@@ -23,7 +23,7 @@ export default [
         description: "",
         categories: ["Lebensmittel"],
         logoUrls: [
-          "/img/logos/Utz_certified_logo.svg",
+          "/mockup/img/logos/Utz_certified_logo.svg",
           "https://upload.wikimedia.org/wikipedia/commons/3/3b/Utz_certified_logo.svg"
         ],
         urls: [
@@ -37,7 +37,7 @@ export default [
         description: "",
         categories: ["Food"],
         logoUrls: [
-          "/img/logos/Utz_certified_logo.svg",
+          "/mockup/img/logos/Utz_certified_logo.svg",
           "https://upload.wikimedia.org/wikipedia/commons/3/3b/Utz_certified_logo.svg"
         ],
         urls: [
@@ -51,7 +51,7 @@ export default [
         description: "",
         categories: ["Nourriture"],
         logoUrls: [
-          "/img/logos/Utz_certified_logo.svg",
+          "/mockup/img/logos/Utz_certified_logo.svg",
           "https://upload.wikimedia.org/wikipedia/commons/3/3b/Utz_certified_logo.svg"
         ],
         urls: [
@@ -87,7 +87,7 @@ export default [
         description: "",
         categories: ["Lebensmittel"],
         logoUrls: [
-          "/img/logos/Bioland_Logo_2012.svg",
+          "/mockup/img/logos/Bioland_Logo_2012.svg",
           "https://upload.wikimedia.org/wikipedia/commons/9/99/Bioland_Logo_2012.svg"
         ],
         urls: [
@@ -101,7 +101,7 @@ export default [
         description: "",
         categories: ["Food"],
         logoUrls: [
-          "/img/logos/Bioland_Logo_2012.svg",
+          "/mockup/img/logos/Bioland_Logo_2012.svg",
           "https://upload.wikimedia.org/wikipedia/commons/9/99/Bioland_Logo_2012.svg"
         ],
         urls: [
@@ -138,7 +138,7 @@ export default [
           "Bio-Siegel der Europäischen Union: Die „Verordnung (EG) Nr. 834/2007 des Rates vom 28. Juni 2007 über die ökologische/biologische Produktion und die Kennzeichnung von ökologischen/biologischen Erzeugnissen“ (Europäische Öko-Verordnung oder EG-Öko-Verordnung) definiert, wie Erzeugnisse und Lebensmittel, die als Öko-Produkte gekennzeichnet sind, erzeugt und hergestellt werden müssen.",
         categories: ["Lebensmittel"],
         logoUrls: [
-          "/img/logos/Organic-Logo.svg",
+          "/mockup/img/logos/Organic-Logo.svg",
           "https://upload.wikimedia.org/wikipedia/commons/2/25/Organic-Logo.svg"
         ],
         urls: [
@@ -153,7 +153,7 @@ export default [
           "EU certified organic food label: The European Union regulation (EEC) No. 2092/91 of the European Council of 24 June 1991 on organic production of agricultural products and indications referring thereto on agricultural products and foodstuffs (EU-Eco-regulation) defines how agricultural products and foods that are designated as ecological products have to be grown.",
         categories: ["Food"],
         logoUrls: [
-          "/img/logos/Organic-Logo.svg",
+          "/mockup/img/logos/Organic-Logo.svg",
           "https://upload.wikimedia.org/wikipedia/commons/2/25/Organic-Logo.svg"
         ],
         urls: [
@@ -188,7 +188,7 @@ export default [
         description: "",
         categories: ["Lebensmittel"],
         logoUrls: [
-          "/img/logos/Fairtrade_Certification_Mark.svg",
+          "/mockup/img/logos/Fairtrade_Certification_Mark.svg",
           "https://upload.wikimedia.org/wikipedia/en/6/6b/Fairtrade_Certification_Mark.svg"
         ],
         urls: [
@@ -201,7 +201,7 @@ export default [
         description: "",
         categories: ["Food"],
         logoUrls: [
-          "/img/logos/Fairtrade_Certification_Mark.svg",
+          "/mockup/img/logos/Fairtrade_Certification_Mark.svg",
           "https://upload.wikimedia.org/wikipedia/en/6/6b/Fairtrade_Certification_Mark.svg"
         ],
         urls: [
@@ -237,7 +237,7 @@ export default [
           "Vegetarisch/vegan: Das V-Label ist ein einheitliches Gütesiegel der Europäischen Vegetarier-Union zur Kennzeichnung von vegetarischen und veganen Produkten und Dienstleistungen.",
         categories: ["Lebensmittel"],
         logoUrls: [
-          "/img/logos/V-label.jpg",
+          "/mockup/img/logos/V-label.jpg",
           "https://upload.wikimedia.org/wikipedia/commons/0/01/V-label.jpg"
         ],
         urls: [
@@ -251,7 +251,7 @@ export default [
           "Vegetarian/vegan: The V-label symbol identifies vegetarian food in the main categories: vegetarian, ovo, lacto, ovo-lacto, and vegan.",
         categories: ["Food"],
         logoUrls: [
-          "/img/logos/V-label.jpg",
+          "/mockup/img/logos/V-label.jpg",
           "https://upload.wikimedia.org/wikipedia/commons/0/01/V-label.jpg"
         ],
         urls: [
