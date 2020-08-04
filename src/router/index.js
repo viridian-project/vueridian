@@ -1,10 +1,16 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import FourOhFour from "../views/FourOhFour.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
+  // the 404 page catch-all route:
+  {
+    path: "*",
+    component: FourOhFour
+  },
   {
     path: "/",
     name: "Home",
