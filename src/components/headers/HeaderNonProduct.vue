@@ -1,6 +1,6 @@
 <template>
   <header>
-    <HeaderTopNonProduct />
+    <HeaderTopNonProduct :type="type" />
     <HeaderTabs />
   </header>
 </template>
@@ -12,6 +12,9 @@ import HeaderTabs from "@/components/headers/HeaderTabs.vue";
 
 export default {
   name: "HeaderNonProduct",
+  props: {
+    type: String
+  },
   components: {
     HeaderTopNonProduct,
     HeaderTabs

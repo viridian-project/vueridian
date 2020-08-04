@@ -37,10 +37,31 @@
       >
         <img src="@/assets/icons/ionicons/md-arrow-back.svg" alt="Back" />
       </a>
-      <div><input type="text" name="label-name" id="label-name" /></div>
-      <a title="Submit" href="labels-search-results.html">
+      <div>
+        <input
+          type="text"
+          :name="type + '-name'"
+          :id="type + '-name'"
+          v-model="q"
+        />
+      </div>
+      <router-link :to="'/' + type + '/search/' + encodeURIComponent(q)">
         <img src="@/assets/icons/ionicons/md-send.svg" alt="Submit" />
-      </a>
+      </router-link>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "HeaderTopNonProduct",
+  props: {
+    type: String
+  },
+  data: function() {
+    return {
+      q: ""
+    };
+  }
+};
+</script>

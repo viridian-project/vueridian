@@ -38,6 +38,31 @@ const routes = [
     path: "/label",
     name: "Label",
     component: () => import("../views/Label.vue")
+  },
+  {
+    path: "/label/search/:q",
+    name: "LabelSearch",
+    component: () => import("../views/LabelSearch.vue")
+  },
+  {
+    path: "/label/:id",
+    name: "LabelView",
+    component: () => import("../views/LabelView.vue")
+  },
+  {
+    path: "/company",
+    name: "Company",
+    component: () => import("../views/Company.vue")
+  },
+  {
+    path: "/company/search/:q",
+    name: "CompanySearch",
+    component: () => import("../views/CompanySearch.vue")
+  },
+  {
+    path: "/company/:id",
+    name: "CompanyView",
+    component: () => import("../views/CompanyView.vue")
   }
 ];
 
