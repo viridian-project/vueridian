@@ -13,7 +13,7 @@ This is a Progressive Web App (PWA) powered by Vue.js.
 ## First install
 
 ```
-npm install -g @vue/cli
+sudo npm install -g @vue/cli
 vue create vueridian
 ```
 
@@ -56,6 +56,49 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
+```
+
+This writes the install into a directory `dist`.
+
+#### Deployment
+
+Just copy the `dist` directory to your web server.
+
+If the app shall be deployed not directly at the root of your
+domain, e.g. at `www.your-site.org`, but rather under
+`www.your-site.org/app`, you must set the `publicPath` appropriately
+in the `vue.config.js`: (default value is '/', see
+https://cli.vuejs.org/config/#publicpath)
+
+```
+// vue.config.js
+module.exports = {
+  publicPath: '/app/',
+  ...
+}
+```
+
+When using the vue-router history mode for nice normal-looking URLs,
+you must also configure your web server properly to avoid 404 errors
+on page refresh (see https://router.vuejs.org/guide/essentials/history-mode.html):
+
+nginx:
+```
+location /app/ { # or use 'location /' if your app is at the domain root
+  try_files $uri $uri/ /app/index.html; # or use '/index.html' if your app is at the domain root
+}
+```
+
+Apache:
+```
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /app/ # or use 'RewriteBase /' if your app is at the domain root
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /app/index.html [L] # or use '/index.html' if your app is at the domain root
+</IfModule>
 ```
 
 ### Run your tests
