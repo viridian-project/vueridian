@@ -2,18 +2,27 @@
   <div id="page">
     <HeaderProduct />
     <div id="main-content">
-      <div class="home">
+      <section class="home">
         <img
           alt="Viridian logo"
           src="@/assets/images/StellaOctangula_finished.svg"
         />
         <h1>
-          Products Information and Rating
+          Products: Information and Rating
         </h1>
-        <h3>
-          Use the search button in the upper right to search for products.
-        </h3>
-      </div>
+        <p>
+          You can click on the
+          <strong>Search</strong> button in the upper right and then on
+          <strong>Search by Product Name</strong>.
+        </p>
+        <h3>Please note:</h3>
+        <p>
+          So far, only one search for <code>chocolate spread</code>
+          is implemented in this mockup. Other product searches, searching by
+          barcode and searches for labels or companies are not implemented yet
+          (but are of course all planned and useful).
+        </p>
+      </section>
     </div>
     <Footer />
   </div>

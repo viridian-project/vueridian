@@ -1,6 +1,6 @@
 <template>
   <div id="page">
-    <HeaderNonProduct type="label" />
+    <HeaderNonProduct type="company" />
     <div id="main-content">
       <section class="home">
         <img
@@ -8,15 +8,15 @@
           src="@/assets/images/StellaOctangula_finished.svg"
         />
         <h1>
-          Labels: Information and Rating
+          Companies: Information and Rating
         </h1>
         <h3>Oh no!</h3>
         <p>
           This part of the mockup has not been implemented yet... 😞
         </p>
         <p>
-          Searches for labels are not implemented yet in this mockup (but it's
-          of course planned and useful). Only product search has been
+          Searches for companies are not implemented yet in this mockup (but
+          it's of course planned and useful). Only product search has been
           implemented. Click on <strong>Products</strong> to search for products
           instead.
         </p>
@@ -32,7 +32,7 @@ import HeaderNonProduct from "@/components/headers/HeaderNonProduct.vue";
 import Footer from "@/components/Footer.vue";
 
 export default {
-  name: "Label",
+  name: "Company",
   components: {
     HeaderNonProduct,
     Footer
