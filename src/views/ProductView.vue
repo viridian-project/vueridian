@@ -131,6 +131,18 @@
           </div>
         </div>
       </section>
+      <section>
+        <p>
+          Product images are based on an
+          <a
+            href="http://mikimotoangel.blogspot.com/2011/04/gastronomy-sweet-tooth.html"
+            >image by Katrina Angela Castro (download on 2020-03-26)</a
+          >, licensed under a
+          <a href="https://creativecommons.org/licenses/by/3.0/ph/"
+            >Creative Commons Attribution 3.0 Philippines License</a
+          >, which has been modified (replaced labels and changed lid color).
+        </p>
+      </section>
     </div>
     <Footer />
   </div>
