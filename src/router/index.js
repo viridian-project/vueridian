@@ -6,11 +6,6 @@ import FourOhFour from "../views/FourOhFour.vue";
 Vue.use(VueRouter);
 
 const routes = [
-  // the 404 page catch-all route:
-  {
-    path: "*",
-    component: FourOhFour
-  },
   {
     path: "/",
     name: "Home",
@@ -69,6 +64,11 @@ const routes = [
     path: "/company/:id",
     name: "CompanyView",
     component: () => import("../views/CompanyView.vue")
+  },
+  // the 404 page catch-all route:
+  {
+    path: "*",
+    component: FourOhFour
   }
 ];
 
