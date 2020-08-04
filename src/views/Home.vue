@@ -2,20 +2,20 @@
   <div id="page">
     <HeaderHome />
     <div id="main-content">
-      <div class="home">
+      <section class="home">
         <img
           alt="Viridian logo"
           src="@/assets/images/StellaOctangula_finished.svg"
         />
-        <HelloWorld msg="Welcome to Your Vue.js App" />
-        <Modal
+        <WelcomeMessage msg="Welcome to the Viridian Network Mockup App" />
+        <!-- <Modal
           wrapperClass="center-modal-wrapper"
           v-model="showModal"
           title="My first modal"
         >
           <p>Modal content goes here...</p>
-        </Modal>
-      </div>
+        </Modal> -->
+      </section>
     </div>
     <Footer />
   </div>
@@ -29,26 +29,26 @@
 </style>
 
 <script>
-import VueModal from "@kouts/vue-modal";
+// import VueModal from "@kouts/vue-modal";
 import "@kouts/vue-modal/dist/vue-modal.css";
 
 // @ is an alias to /src
 import HeaderHome from "@/components/headers/HeaderHome.vue";
-import HelloWorld from "@/components/HelloWorld.vue";
+import WelcomeMessage from "@/components/WelcomeMessage.vue";
 import Footer from "@/components/Footer.vue";
 
 export default {
   name: "Home",
   components: {
-    Modal: VueModal,
+    // Modal: VueModal,
     HeaderHome,
-    HelloWorld,
+    WelcomeMessage,
     Footer
-  },
-  data: function() {
-    return {
-      showModal: true
-    };
   }
+  // data: function() {
+  //   return {
+  //     showModal: true
+  //   };
+  // }
 };
 </script>

@@ -1,7 +1,19 @@
 <template>
-  <div class="hello">
+  <div>
     <h1>{{ msg }}</h1>
     <p>
+      You can click on <strong>Products</strong>, then on the
+      <strong>Search</strong> button in the upper right and then on
+      <strong>Search by Product Name</strong>.
+    </p>
+    <h3>Please note:</h3>
+    <p>
+      So far, only one search for <code>chocolate spread</code>
+      is implemented in this mockup. Other product searches, searching by
+      barcode and searches for labels or companies are not implemented yet (but
+      are of course all planned and useful).
+    </p>
+    <!-- <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
@@ -106,13 +118,13 @@
           >awesome-vue</a
         >
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "WelcomeMessage",
   props: {
     msg: String
   }
